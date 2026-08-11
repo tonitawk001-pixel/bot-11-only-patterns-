@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-07-28T06:05:46.569207+00:00",
+  "account": {
+    "balance": 158.09,
+    "open_positions": 0
+  },
+  "summary": {
+    "total_trades": 0,
+    "wins": 0,
+    "losses": 0,
+    "win_rate_pct": 0,
+    "net_pnl": 0,
+    "profit_factor": 0,
+    "avg_win": 0,
+    "avg_loss": 0
+  },
+  "breakdown": {
+    "exit_reasons": {},
+    "buys": 0,
+    "sells": 0
+  }
+}

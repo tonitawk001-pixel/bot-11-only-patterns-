@@ -1,0 +1,153 @@
+================================================================================
+  EXHAUSTIVE OPTIMIZATION — 30-min deep search
+  2026-08-12 01:10:19 UTC
+================================================================================
+
+Pulling 3 months M15 data...
+Got 5849 candles: 2026-05-13 22:15:00 to 2026-08-11 22:00:00
+Pre-computing indicators...
+Done.
+
+Combinations: 13,824
+
+Running sweep...
+  1000/13824 (7.2%) | 20/s | ETA:10.8min
+  2000/13824 (14.5%) | 19/s | ETA:10.6min
+  3000/13824 (21.7%) | 18/s | ETA:10.2min
+  4000/13824 (28.9%) | 17/s | ETA:9.4min
+  5000/13824 (36.2%) | 17/s | ETA:8.6min
+  6000/13824 (43.4%) | 16/s | ETA:7.9min
+  7000/13824 (50.6%) | 16/s | ETA:6.9min
+  8000/13824 (57.9%) | 16/s | ETA:5.9min
+  9000/13824 (65.1%) | 16/s | ETA:5.0min
+  10000/13824 (72.3%) | 16/s | ETA:4.0min
+  11000/13824 (79.6%) | 16/s | ETA:2.9min
+  12000/13824 (86.8%) | 16/s | ETA:1.9min
+  13000/13824 (94.0%) | 16/s | ETA:0.9min
+
+Done in 871s. 3864 results.
+
+================================================================================
+  TOP 15 BY NET P&L
+================================================================================
+
+ #1: $+2,537.77 | WR=52.4% | PF=2.09 | DD=7.5% | T=21
+   RSI14: buy35-65 brk>72 | ADX>25 | Sess:active_only
+   OSrev:False(<25) Rev:False(>65) | RR:2.0 SL:3.0x
+   BUY:6t $+519.40 SELL:15t $+2,018.37
+
+ #2: $+2,537.77 | WR=52.4% | PF=2.09 | DD=7.5% | T=21
+   RSI14: buy35-65 brk>72 | ADX>25 | Sess:active_only
+   OSrev:False(<25) Rev:False(>68) | RR:2.0 SL:3.0x
+   BUY:6t $+519.40 SELL:15t $+2,018.37
+
+ #3: $+2,537.77 | WR=52.4% | PF=2.09 | DD=7.5% | T=21
+   RSI14: buy35-65 brk>72 | ADX>25 | Sess:active_only
+   OSrev:False(<30) Rev:False(>65) | RR:2.0 SL:3.0x
+   BUY:6t $+519.40 SELL:15t $+2,018.37
+
+ #4: $+2,537.77 | WR=52.4% | PF=2.09 | DD=7.5% | T=21
+   RSI14: buy35-65 brk>72 | ADX>25 | Sess:active_only
+   OSrev:False(<30) Rev:False(>68) | RR:2.0 SL:3.0x
+   BUY:6t $+519.40 SELL:15t $+2,018.37
+
+ #5: $+2,537.77 | WR=52.4% | PF=2.09 | DD=7.5% | T=21
+   RSI14: buy40-65 brk>72 | ADX>25 | Sess:active_only
+   OSrev:False(<25) Rev:False(>65) | RR:2.0 SL:3.0x
+   BUY:6t $+519.40 SELL:15t $+2,018.37
+
+ #6: $+2,537.77 | WR=52.4% | PF=2.09 | DD=7.5% | T=21
+   RSI14: buy40-65 brk>72 | ADX>25 | Sess:active_only
+   OSrev:False(<25) Rev:False(>68) | RR:2.0 SL:3.0x
+   BUY:6t $+519.40 SELL:15t $+2,018.37
+
+ #7: $+2,537.77 | WR=52.4% | PF=2.09 | DD=7.5% | T=21
+   RSI14: buy40-65 brk>72 | ADX>25 | Sess:active_only
+   OSrev:False(<30) Rev:False(>65) | RR:2.0 SL:3.0x
+   BUY:6t $+519.40 SELL:15t $+2,018.37
+
+ #8: $+2,537.77 | WR=52.4% | PF=2.09 | DD=7.5% | T=21
+   RSI14: buy40-65 brk>72 | ADX>25 | Sess:active_only
+   OSrev:False(<30) Rev:False(>68) | RR:2.0 SL:3.0x
+   BUY:6t $+519.40 SELL:15t $+2,018.37
+
+ #9: $+2,537.77 | WR=52.4% | PF=2.09 | DD=7.5% | T=21
+   RSI14: buy45-65 brk>72 | ADX>25 | Sess:active_only
+   OSrev:False(<25) Rev:False(>65) | RR:2.0 SL:3.0x
+   BUY:6t $+519.40 SELL:15t $+2,018.37
+
+ #10: $+2,537.77 | WR=52.4% | PF=2.09 | DD=7.5% | T=21
+   RSI14: buy45-65 brk>72 | ADX>25 | Sess:active_only
+   OSrev:False(<25) Rev:False(>68) | RR:2.0 SL:3.0x
+   BUY:6t $+519.40 SELL:15t $+2,018.37
+
+ #11: $+2,537.77 | WR=52.4% | PF=2.09 | DD=7.5% | T=21
+   RSI14: buy45-65 brk>72 | ADX>25 | Sess:active_only
+   OSrev:False(<30) Rev:False(>65) | RR:2.0 SL:3.0x
+   BUY:6t $+519.40 SELL:15t $+2,018.37
+
+ #12: $+2,537.77 | WR=52.4% | PF=2.09 | DD=7.5% | T=21
+   RSI14: buy45-65 brk>72 | ADX>25 | Sess:active_only
+   OSrev:False(<30) Rev:False(>68) | RR:2.0 SL:3.0x
+   BUY:6t $+519.40 SELL:15t $+2,018.37
+
+ #13: $+2,085.94 | WR=47.8% | PF=1.76 | DD=7.5% | T=23
+   RSI14: buy35-65 brk>72 | ADX>25 | Sess:active_only
+   OSrev:True(<25) Rev:False(>65) | RR:2.0 SL:3.0x
+   BUY:7t $+330.22 SELL:16t $+1,755.72
+   OS-Revs:1t $-209.20
+
+ #14: $+2,085.94 | WR=47.8% | PF=1.76 | DD=7.5% | T=23
+   RSI14: buy35-65 brk>72 | ADX>25 | Sess:active_only
+   OSrev:True(<25) Rev:False(>68) | RR:2.0 SL:3.0x
+   BUY:7t $+330.22 SELL:16t $+1,755.72
+   OS-Revs:1t $-209.20
+
+ #15: $+2,085.94 | WR=47.8% | PF=1.76 | DD=7.5% | T=23
+   RSI14: buy40-65 brk>72 | ADX>25 | Sess:active_only
+   OSrev:True(<25) Rev:False(>65) | RR:2.0 SL:3.0x
+   BUY:7t $+330.22 SELL:16t $+1,755.72
+   OS-Revs:1t $-209.20
+
+================================================================================
+  FEATURE CONTRIBUTION ANALYSIS
+================================================================================
+
+  Oversold BUY Reversal:
+    With:    $+2,085.94 | PF=1.76 | WR=47.8%
+    Without: $+2,537.77 | PF=2.09 | WR=52.4%
+    Diff:    $-451.83 — HURTS
+
+  Overbought SELL Reversal:
+    With:    $+1,791.28 | PF=1.89 | WR=43.8%
+    Without: $+2,537.77 | PF=2.09 | WR=52.4%
+    Diff:    $-746.49 — HURTS
+
+  ADX Filter Active:
+    With:    $+2,537.77 | PF=2.09 | WR=52.4%
+    Without: $+1,224.80 | PF=1.51 | WR=38.9%
+    Diff:    $+1,312.97 — IMPROVES
+
+  Session Filter Active:
+    With:    $+2,537.77 | PF=2.09 | WR=52.4%
+    Without: $+1,791.28 | PF=1.89 | WR=43.8%
+    Diff:    $+746.49 — IMPROVES
+
+  ADX FILTER IMPACT:
+    ADX>0: Best=$+1,224.80 PF=1.51 WR=38.9% (n=912)
+    ADX>15: Best=$+1,224.80 PF=1.51 WR=38.9% (n=912)
+    ADX>20: Best=$+1,791.28 PF=1.89 WR=43.8% (n=984)
+    ADX>25: Best=$+2,537.77 PF=2.09 WR=52.4% (n=1056)
+
+================================================================================
+  OPTIMAL CONFIGURATION
+================================================================================
+
+  Score: 1.000 | $+2,537.77 | PF=2.09 | WR=52.4% | DD=7.5%
+
+  RECOMMENDED SETTINGS:
+Traceback (most recent call last):
+  File "C:\visual studio code\ai bot\bot-6--master\bot-6--master\trading_bot_mt5\exhaustive_sweep.py", line 345, in <module>
+    print(f"    RSI Period:          {bp['rsi_period']}")
+                                      ~~^^^^^^^^^^^^^^
+KeyError: 'rsi_period'

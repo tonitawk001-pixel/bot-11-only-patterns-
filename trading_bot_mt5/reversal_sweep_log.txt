@@ -1,0 +1,67 @@
+================================================================================
+  REVERSAL PATH SWEEP — Tests overbought exhaustion SELL
+  2026-08-12 01:05:36 UTC
+================================================================================
+
+Pulling MT5 data...
+Got 5849 candles: 2026-05-13 22:15:00 to 2026-08-11 22:00:00
+Computing indicators...
+Done.
+
+Combinations: 768
+
+Running sweep...
+  500/768 (65.1%) | 20/s | ETA:0.2min
+
+Done in 41s. 768 results.
+
+================================================================================
+  REVERSAL ON vs OFF COMPARISON
+================================================================================
+
+  REVERSAL ON:
+    Best Net: $+5,971.68 | WR=47.5% | PF=1.76 | DD=10.4%
+    Reversal trades: 2 | Rev PnL: $+143.23
+    All SELLs: 22t $+3,503.14
+
+  REVERSAL OFF:
+    Best Net: $+5,834.52 | WR=47.5% | PF=1.77 | DD=10.0%
+    Reversal trades: 0 | Rev PnL: $+0.00
+    All SELLs: 21t $+3,606.92
+
+================================================================================
+  BEST REVERSAL CONFIGURATIONS
+================================================================================
+  #1: Rev PnL=$+1,654.90(13t) | Overall=$+3,976.19 | PF=1.62 | WR=46.2%
+    RSI>65 | Score>=2 | Vol:True | Stoch:True | BB:True | RegSell:5chk
+  #2: Rev PnL=$+1,654.90(13t) | Overall=$+3,976.19 | PF=1.62 | WR=46.2%
+    RSI>65 | Score>=2 | Vol:True | Stoch:False | BB:True | RegSell:5chk
+  #3: Rev PnL=$+1,654.90(13t) | Overall=$+3,976.19 | PF=1.62 | WR=46.2%
+    RSI>65 | Score>=2 | Vol:False | Stoch:True | BB:True | RegSell:5chk
+  #4: Rev PnL=$+1,654.90(13t) | Overall=$+3,976.19 | PF=1.62 | WR=46.2%
+    RSI>65 | Score>=2 | Vol:False | Stoch:False | BB:True | RegSell:5chk
+  #5: Rev PnL=$+1,422.41(14t) | Overall=$+2,667.05 | PF=1.33 | WR=35.2%
+    RSI>65 | Score>=2 | Vol:True | Stoch:True | BB:True | RegSell:3chk
+  #6: Rev PnL=$+1,422.41(14t) | Overall=$+2,667.05 | PF=1.33 | WR=35.2%
+    RSI>65 | Score>=2 | Vol:True | Stoch:False | BB:True | RegSell:3chk
+  #7: Rev PnL=$+1,422.41(14t) | Overall=$+2,667.05 | PF=1.33 | WR=35.2%
+    RSI>65 | Score>=2 | Vol:False | Stoch:True | BB:True | RegSell:3chk
+  #8: Rev PnL=$+1,422.41(14t) | Overall=$+2,667.05 | PF=1.33 | WR=35.2%
+    RSI>65 | Score>=2 | Vol:False | Stoch:False | BB:True | RegSell:3chk
+  #9: Rev PnL=$+1,274.01(12t) | Overall=$+4,864.37 | PF=1.76 | WR=47.3%
+    RSI>65 | Score>=2 | Vol:True | Stoch:True | BB:True | RegSell:3chk
+  #10: Rev PnL=$+1,274.01(12t) | Overall=$+4,864.37 | PF=1.76 | WR=47.3%
+    RSI>65 | Score>=2 | Vol:True | Stoch:False | BB:True | RegSell:3chk
+
+================================================================================
+  IMPROVEMENT ANALYSIS
+================================================================================
+
+  Best WITHOUT reversal: $+5,834.52 | PF=1.77
+  Best WITH reversal:    $+5,971.68 | PF=1.76
+  Improvement:           $+137.16 (+2.4%)
+
+  >>> VERDICT: Reversal path IMPROVES the bot. Keep it.
+  >>> Optimal reversal settings: RSI>65, Score>=2, Vol:False, Stoch:True, BB:False
+
+Results saved.

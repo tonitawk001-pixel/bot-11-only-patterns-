@@ -1,0 +1,7 @@
+6-MONTH COMPARISON: SL 3.0x ATR vs SL 2.0x + Risk 50%
+============================================================
+
+Winner: A: SL 3.0x ATR
+
+SL 3.0x ATR: Net=$-643.86 DD=116.5% PF=0.37
+SL 2.0x+R50%: Net=$-518.95 DD=102.2% PF=0.76

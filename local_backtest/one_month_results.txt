@@ -1,0 +1,6 @@
+GOLD BACKTEST REPORT: 2026-06-24 to 2026-07-24
+==================================================
+Net Profit: $294.57
+Win Rate: 54.9%
+Total Trades: 153
+Max DD: 42.9%

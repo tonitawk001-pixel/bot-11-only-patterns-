@@ -1,0 +1,23 @@
+Testing import chain for main_super.py...
+
+  OK: mt5_connection
+  OK: logger_mt5
+  OK: telegram_notifier
+  OK: trade_exporter
+  OK: github_setup
+  OK: news_filter
+  OK: deepseek_filter
+  OK: candle_patterns
+  OK: performance_tracker
+  OK: technical_indicators
+  OK: gold_scalping_strategy
+  OK: confirmation_engine
+
+Instantiating key objects...
+2026-08-12 00:12:25 | INFO     | TradingBot | GoldScalpingStrategy v4 initialized (XAUUSD only, 20 trades/day target).
+  OK: GoldScalpingStrategy()
+  OK: evaluate_trade_signals (function)
+  OK: NewsFilter()
+
+Result: 12/12 imports passed, 0 failed
+main_super.py CAN start

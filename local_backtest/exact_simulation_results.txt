@@ -1,0 +1,20 @@
+EXACT BOT SIMULATION RESULTS (3 months M15+M5)
+============================================================
+
+Recommended: A: SL 3.0x ATR only
+
+
+BASELINE (current: SL 1.5x):
+  Net: $8545.90 (+1709.2%)
+  DD: 43.5% | PF: 1.28 | WR: 44.4%
+  Trades: 286 | SL: 159 | TP: 36 | Trail: 91
+
+A: SL 3.0x ATR only:
+  Net: $6960.41 (+1392.1%)
+  DD: 33.8% | PF: 1.59 | WR: 61.7%
+  Trades: 379 | SL: 145 | TP: 41 | Trail: 193
+
+B: SL 2.0x ATR + Risk 50%:
+  Net: $1692.95 (+338.6%)
+  DD: 30.0% | PF: 1.38 | WR: 46.8%
+  Trades: 444 | SL: 236 | TP: 32 | Trail: 176

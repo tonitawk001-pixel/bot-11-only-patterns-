@@ -1,0 +1,12 @@
+ctx = {
+                            "m15_bias": result.get("bias"),
+                            "h4_trend": h4_trend,
+                            "rsi": round(i15["rsi"].iloc[-1], 1),
+                            "atr_status": "High" if i15["atr"].iloc[-1] > i15["atr"].rolling(20).mean().iloc[-1] * 1.5 else "Normal",
+                            "sr_levels": f"Dist to Resistance: , Dist to Support: ",
+                            "news": nf.get_upcoming_news_string(),
+                            "score": score,
+                            "reason": result.get("reason", ""),
+                            "daily_pnl": round(daily_pnl, 2),
+                            "open_positions": f"{len(pos)} open: " + ", ".join([f"{p["type"]} @ {p["entry"]} (SL:{p["sl"]})" for p in pos]) if pos else "None"
+                        }

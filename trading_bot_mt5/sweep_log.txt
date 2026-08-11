@@ -1,0 +1,154 @@
+================================================================================
+  FAST PARAMETER SWEEP — 3 Months XAUUSD M15
+  2026-08-12 00:37:24 UTC
+================================================================================
+
+Pulling MT5 data...
+Got 5849 candles: 2026-05-13 22:00:00 to 2026-08-11 20:45:00
+Computing indicators...
+Done.
+
+Parameter combinations: 6,912
+
+Running sweep...
+  500/6912 (7.2%) | 15/s | ETA:7.1min
+  1000/6912 (14.5%) | 14/s | ETA:7.0min
+  1500/6912 (21.7%) | 14/s | ETA:6.4min
+  2000/6912 (28.9%) | 14/s | ETA:6.0min
+  2500/6912 (36.2%) | 14/s | ETA:5.4min
+  3000/6912 (43.4%) | 14/s | ETA:4.8min
+  3500/6912 (50.6%) | 14/s | ETA:4.2min
+  4000/6912 (57.9%) | 14/s | ETA:3.6min
+  4500/6912 (65.1%) | 14/s | ETA:3.0min
+  5000/6912 (72.3%) | 13/s | ETA:2.4min
+  5500/6912 (79.6%) | 13/s | ETA:1.8min
+  6000/6912 (86.8%) | 13/s | ETA:1.1min
+  6500/6912 (94.0%) | 13/s | ETA:0.5min
+
+Done in 515s. 6912 results.
+
+================================================================================
+  TOP 15 BY NET P&L
+================================================================================
+
+ #1: $+5,892.72 | WR=47.5% | PF=1.78 | DD=10.0% | T=61
+   RSI buy:40-60 Brk>68 | MACD:12/26 | Vol:Falsex1.0
+   BB:strict | Stoch:True | SellChk:3 | RR:2.0
+   BUY:40t $+2,227.60(40.0%) SELL:21t $+3,665.12(61.9%) RSI>70:$+2,258.26(16t)
+
+ #2: $+5,892.72 | WR=47.5% | PF=1.78 | DD=10.0% | T=61
+   RSI buy:40-60 Brk>68 | MACD:12/26 | Vol:Falsex1.0
+   BB:any | Stoch:True | SellChk:3 | RR:2.0
+   BUY:40t $+2,227.60(40.0%) SELL:21t $+3,665.12(61.9%) RSI>70:$+2,258.26(16t)
+
+ #3: $+5,892.72 | WR=47.5% | PF=1.78 | DD=10.0% | T=61
+   RSI buy:40-60 Brk>68 | MACD:12/26 | Vol:Falsex1.5
+   BB:strict | Stoch:True | SellChk:3 | RR:2.0
+   BUY:40t $+2,227.60(40.0%) SELL:21t $+3,665.12(61.9%) RSI>70:$+2,258.26(16t)
+
+ #4: $+5,892.72 | WR=47.5% | PF=1.78 | DD=10.0% | T=61
+   RSI buy:40-60 Brk>68 | MACD:12/26 | Vol:Falsex1.5
+   BB:any | Stoch:True | SellChk:3 | RR:2.0
+   BUY:40t $+2,227.60(40.0%) SELL:21t $+3,665.12(61.9%) RSI>70:$+2,258.26(16t)
+
+ #5: $+5,300.45 | WR=51.3% | PF=1.59 | DD=19.9% | T=78
+   RSI buy:30-70 Brk>76 | MACD:12/26 | Vol:Truex1.0
+   BB:strict | Stoch:False | SellChk:3 | RR:1.5
+   BUY:59t $+2,133.57(45.8%) SELL:19t $+3,166.88(68.4%) RSI>70:$+1,493.95(9t)
+
+ #6: $+5,300.45 | WR=51.3% | PF=1.59 | DD=19.9% | T=78
+   RSI buy:30-70 Brk>76 | MACD:12/26 | Vol:Falsex1.0
+   BB:strict | Stoch:False | SellChk:3 | RR:1.5
+   BUY:59t $+2,133.57(45.8%) SELL:19t $+3,166.88(68.4%) RSI>70:$+1,493.95(9t)
+
+ #7: $+5,300.45 | WR=51.3% | PF=1.59 | DD=19.9% | T=78
+   RSI buy:30-70 Brk>76 | MACD:12/26 | Vol:Falsex1.5
+   BB:strict | Stoch:False | SellChk:3 | RR:1.5
+   BUY:59t $+2,133.57(45.8%) SELL:19t $+3,166.88(68.4%) RSI>70:$+1,493.95(9t)
+
+ #8: $+5,223.89 | WR=38.5% | PF=1.49 | DD=14.9% | T=65
+   RSI buy:40-65 Brk>72 | MACD:8/17 | Vol:Truex1.5
+   BB:strict | Stoch:False | SellChk:3 | RR:2.5
+   BUY:43t $+658.04(30.2%) SELL:22t $+4,565.84(54.5%) RSI>70:$+870.22(7t)
+
+ #9: $+5,223.89 | WR=38.5% | PF=1.49 | DD=14.9% | T=65
+   RSI buy:40-65 Brk>72 | MACD:8/17 | Vol:Truex1.5
+   BB:any | Stoch:False | SellChk:3 | RR:2.5
+   BUY:43t $+658.04(30.2%) SELL:22t $+4,565.84(54.5%) RSI>70:$+870.22(7t)
+
+ #10: $+5,145.42 | WR=41.1% | PF=1.62 | DD=15.0% | T=56
+   RSI buy:45-65 Brk>76 | MACD:8/17 | Vol:Truex1.0
+   BB:strict | Stoch:False | SellChk:3 | RR:2.5
+   BUY:33t $+870.81(33.3%) SELL:23t $+4,274.61(52.2%) RSI>70:$+1,572.78(5t)
+
+ #11: $+5,145.42 | WR=41.1% | PF=1.62 | DD=15.0% | T=56
+   RSI buy:45-65 Brk>76 | MACD:8/17 | Vol:Truex1.0
+   BB:any | Stoch:False | SellChk:3 | RR:2.5
+   BUY:33t $+870.81(33.3%) SELL:23t $+4,274.61(52.2%) RSI>70:$+1,572.78(5t)
+
+ #12: $+5,145.42 | WR=41.1% | PF=1.62 | DD=15.0% | T=56
+   RSI buy:45-65 Brk>76 | MACD:8/17 | Vol:Falsex1.0
+   BB:strict | Stoch:False | SellChk:3 | RR:2.5
+   BUY:33t $+870.81(33.3%) SELL:23t $+4,274.61(52.2%) RSI>70:$+1,572.78(5t)
+
+ #13: $+5,145.42 | WR=41.1% | PF=1.62 | DD=15.0% | T=56
+   RSI buy:45-65 Brk>76 | MACD:8/17 | Vol:Falsex1.0
+   BB:any | Stoch:False | SellChk:3 | RR:2.5
+   BUY:33t $+870.81(33.3%) SELL:23t $+4,274.61(52.2%) RSI>70:$+1,572.78(5t)
+
+ #14: $+5,145.42 | WR=41.1% | PF=1.62 | DD=15.0% | T=56
+   RSI buy:45-65 Brk>76 | MACD:8/17 | Vol:Falsex1.5
+   BB:strict | Stoch:False | SellChk:3 | RR:2.5
+   BUY:33t $+870.81(33.3%) SELL:23t $+4,274.61(52.2%) RSI>70:$+1,572.78(5t)
+
+ #15: $+5,145.42 | WR=41.1% | PF=1.62 | DD=15.0% | T=56
+   RSI buy:45-65 Brk>76 | MACD:8/17 | Vol:Falsex1.5
+   BB:any | Stoch:False | SellChk:3 | RR:2.5
+   BUY:33t $+870.81(33.3%) SELL:23t $+4,274.61(52.2%) RSI>70:$+1,572.78(5t)
+
+================================================================================
+  OPTIMAL CONFIGURATION (Weighted Score)
+================================================================================
+
+  Score: 0.985 | $+5,892.72 | PF=1.78 | WR=47.5% | DD=10.0%
+
+  RECOMMENDED SETTINGS:
+    RSI Buy Range:      40 - 60
+    RSI Breakout Above: 68
+    MACD:               12/26
+    Volume Filter:      False (mult: 1.0x)
+    BB Entry Rule:      Pullback to Mid
+    Stochastic Cross:   True
+    SELL Strictness:    3/5 checks
+    Risk:Reward:        1:2.0
+
+================================================================================
+  BEST BY PROFIT FACTOR
+================================================================================
+  #1: PF=1.78 | $+5,892.72 | WR=47.5% | DD=10.0%
+    RSI:40-60/68 | RR:2.0 | Sell:3chk
+  #2: PF=1.78 | $+5,892.72 | WR=47.5% | DD=10.0%
+    RSI:40-60/68 | RR:2.0 | Sell:3chk
+  #3: PF=1.78 | $+5,892.72 | WR=47.5% | DD=10.0%
+    RSI:40-60/68 | RR:2.0 | Sell:3chk
+  #4: PF=1.78 | $+5,892.72 | WR=47.5% | DD=10.0%
+    RSI:40-60/68 | RR:2.0 | Sell:3chk
+  #5: PF=1.68 | $+5,114.83 | WR=46.7% | DD=10.0%
+    RSI:40-60/68 | RR:2.0 | Sell:3chk
+
+================================================================================
+  RSI>70 BUY DEEP DIVE
+================================================================================
+  Best RSI>70 breakout threshold + vol settings:
+  RSI>68 Vol:Truex1.5: RSI70 PnL=$+2,656.84(10t) Overall=$+1,641.90
+  RSI>68 Vol:Truex1.5: RSI70 PnL=$+2,656.84(10t) Overall=$+1,641.90
+  RSI>72 Vol:Truex1.5: RSI70 PnL=$+2,626.34(8t) Overall=$+5,052.11
+  RSI>72 Vol:Truex1.5: RSI70 PnL=$+2,626.34(8t) Overall=$+5,052.11
+  RSI>68 Vol:Truex1.5: RSI70 PnL=$+2,587.65(10t) Overall=$+1,578.30
+  RSI>68 Vol:Truex1.5: RSI70 PnL=$+2,587.65(10t) Overall=$+1,578.30
+  RSI>68 Vol:Truex1.5: RSI70 PnL=$+2,438.68(10t) Overall=$+594.64
+  RSI>68 Vol:Truex1.5: RSI70 PnL=$+2,438.68(10t) Overall=$+594.64
+
+================================================================================
+  Results saved. Run: python main_super.py
+================================================================================

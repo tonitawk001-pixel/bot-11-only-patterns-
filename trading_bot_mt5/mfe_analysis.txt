@@ -1,0 +1,53 @@
+======================================================================
+  STEP 1: MFE ANALYSIS — Profit Giveback Diagnosis
+  2026-08-11 22:30 UTC
+======================================================================
+
+Loading M15 data...
+Loaded 5849 candles: 2026-05-13 22:45:00 to 2026-08-11 22:30:00
+Loaded 29 closed trades
+
+======================================================================
+  MFE ANALYSIS RESULTS
+======================================================================
+
+  Total trades analyzed: 28
+  Wins: 16  |  Losses: 12
+
+  >>> STOP LOSS TRADES THAT WERE PROFITABLE AT PEAK:
+  SL trades: 12
+  Reached +1.0x ATR before SL: 3/12 (25%)
+  Reached +1.5x ATR before SL: 2/12 (17%)
+  Reached +2.0x ATR before SL: 1/12 (8%)
+
+  >>> MONEY LEFT ON TABLE (SL losses):
+  Total MFE reached: $96.76
+  Total actually lost: $-421.36
+  Giveback: $518.12
+
+  >>> ALL TRADES MFE vs FINAL:
+  Total MFE reached: $1,049.35
+  Total PnL: $1.76
+  Efficiency: 0.2%
+
+  >>> AVERAGE MFE (in ATR):
+  Wins:  3.8x ATR
+  Losses: 0.6x ATR
+  SL Losses: 0.6x ATR
+
+  >>> DETAIL: SL TRADES THAT REACHED +1.0x ATR:
+  BUY Entry=4064.02 Peak=4078.81 Exit=4045.05
+    MFE: $+29.58 (1.8x ATR) -> Final: $-37.94
+    Time to peak: 60min | Duration: 820.0min
+  BUY Entry=4258.71 Peak=4284.72 Exit=4225.57
+    MFE: $+26.01 (2.7x ATR) -> Final: $-33.14
+    Time to peak: 284min | Duration: 705.7min
+  BUY Entry=4288.02 Peak=4304.01 Exit=4256.91
+    MFE: $+15.99 (1.1x ATR) -> Final: $-31.11
+    Time to peak: 14min | Duration: 163.1min
+
+  >>> RECOMMENDATION:
+
+======================================================================
+  MFE ANALYSIS COMPLETE
+======================================================================

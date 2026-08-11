@@ -1,0 +1,65 @@
+======================================================================
+  LIVE VALIDATION — v2.0 Confirmation Engine
+  2026-08-11 22:43:48 UTC
+======================================================================
+
+Account: 314326 | Server: ACCMIntl-Demo
+Balance: $461.22 | Equity: $444.54
+
+Pulling M15 data for XAUUSD...
+Got 460 M15 candles: 2026-08-04 22:45:00 to 2026-08-11 22:30:00
+
+Computing indicators...
+2026-08-12 01:43:48 | INFO     | TradingBot | Logger initialized. Log directory: C:\Users\ASUS\logs
+
+==================================================
+  CURRENT M15 MARKET STATE
+==================================================
+  Price:     $4375.63
+  RSI(14):   58.7
+  SMA 40:    4380.57
+  SMA 200:   4365.47
+  BB Upper:  4383.59
+  BB Mid:    4371.60
+  BB Lower:  4359.61
+  MACD Line: -2.2683
+  MACD Sig:  -3.5232
+  MACD Hist: 1.2549
+  Stoch K:   87.8
+  Stoch D:   69.1
+  Volume:    2306
+  Vol MA:    3817
+
+======================================================================
+  RUNNING CONFIRMATION ENGINE
+======================================================================
+
+======================================================================
+[2026-08-11 22:43:48 UTC] EVALUATING BUY SIGNAL @ $4375.63
+======================================================================
+  [2026-08-11 22:43:48 UTC] [PASS] TREND: MA40 (4380.57) > MA200 (4365.47) — bullish structure confirmed
+  [Option 1 - Breakout] [2026-08-11 22:43:48 UTC] [FAIL] BREAKOUT: RSI=58.7 — not in breakout zone (>68 required)
+  [Option 2 - Pullback] [2026-08-11 22:43:48 UTC] [FAIL] PULLBACK: MACD OK but Stochastic K=87.8 >= 80 — overbought on oscillator
+
+  >>> DECISION: NO TRADE — BUY rejected: breakout, pullback checks failed
+
+======================================================================
+[2026-08-11 22:43:48 UTC] EVALUATING SELL SIGNAL @ $4375.63
+======================================================================
+  [1/5 - Trend] [2026-08-11 22:43:48 UTC] [PASS] TREND: Price (4375.63) < MA40 (4380.57) — bearish structure
+  [2/5 - RSI] [2026-08-11 22:43:48 UTC] [FAIL] RSI: RSI=58.7 >= 50 — not in bearish zone
+  [3/5 - MACD] [2026-08-11 22:43:48 UTC] [FAIL] MACD: MACD line (-2.2683) >= Signal (-3.5232) — no bearish cross
+  [4/5 - Stochastic] [2026-08-11 22:43:48 UTC] [FAIL] STOCH: No bearish cross (K=87.8 D=69.1, prev K=70.7 D=51.4)
+  [5/5 - Location] [2026-08-11 22:43:48 UTC] [PASS] LOCATION: Price (4375.63) safely above Lower BB (4359.61, dist=0.37%)
+
+  >>> DECISION: NO TRADE — SELL rejected: only 2/5 checks passed (need 3) — failed: rsi, macd, stochastic
+
+  OPEN POSITIONS: 1
+    #11803521: SELL 0.02 lots @ 4367.49 | SL: 4388.13 | TP: 4326.19 | PnL: $-17.06
+
+  Current Spread: $0.39
+  Bid: $4375.63 | Ask: $4376.02
+
+======================================================================
+  VALIDATION COMPLETE — Engine is operational
+======================================================================

@@ -1,0 +1,15 @@
+SUPER BOT v5.0 — JUNE 2026 BACKTEST RESULTS
+============================================================
+Period: June 2026
+Starting Balance: $500.00
+Final Balance: $1516.04
+Net Profit: $+1016.04 (+203.2%)
+Total Trades: 162
+Win Rate: 40.1%
+Avg Win: $78.25
+Avg Loss: $-41.96
+Profit Factor: 1.25
+Max Drawdown: 37.5%
+Best Trade: $189.45
+Worst Trade: $-74.43
+BUY/SELL: 49/113
