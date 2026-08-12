@@ -543,6 +543,12 @@ def main_loop():
                         raw_direction = "NONE"
                         logger.info(f"[ADX] Chop market (ADX={m15_adx:.0f} < 20) -- skipping")
 
+                # EXTREME TREND FILTER: block trades when ADX >= 50 (trend exhaustion). Robust across all 4 backtests.
+                if raw_direction != "NONE" and not np.isnan(m15_adx) and m15_adx >= 50:
+                    blocked_by = f"extreme_trend_adx_{m15_adx:.0f}_ge_50"
+                    raw_direction = "NONE"
+                    logger.info(f"[ADX] Extreme trend (ADX={m15_adx:.0f} >= 50) -- skipping")
+
                 # SESSION FILTER: only in chop regime (skipped in strong trend)
                 h = now.hour
                 in_active = (8 <= h < 17) or (13 <= h < 22)  # London or NY
@@ -574,10 +580,10 @@ def main_loop():
                             blocked_by = f"buy_vol_dead_{m15_atr_pct:.2f}pct"
                             raw_direction = "NONE"
                             logger.info(f"[VOL] BUY blocked: dead market (ATR={m15_atr_pct:.2f}% < 0.1%)")
-                        elif raw_direction == "SELL" and (m15_atr_pct < 0.2 or m15_atr_pct > 0.5):
-                            blocked_by = f"sell_vol_outside_{m15_atr_pct:.2f}pct"
+                        elif raw_direction == "SELL" and m15_atr_pct < 0.3:
+                            blocked_by = f"sell_vol_low_{m15_atr_pct:.2f}pct"
                             raw_direction = "NONE"
-                            logger.info(f"[VOL] SELL blocked: ATR={m15_atr_pct:.2f}% outside 0.2-0.5% (needs volatility)")
+                            logger.info(f"[VOL] SELL blocked: ATR={m15_atr_pct:.2f}% < 0.3% (too quiet)")
                 except Exception as e:
                     pass
 
@@ -587,7 +593,7 @@ def main_loop():
                         bb_range = m15_bb_upper - m15_bb_lower
                         if bb_range > 0:
                             bb_pos = (m15_price - m15_bb_lower) / bb_range
-                            if 0.3 <= bb_pos <= 0.7:
+                            if 0.25 <= bb_pos <= 0.7:
                                 blocked_by = f"bb_middle_sell_{bb_pos:.2f}"
                                 raw_direction = "NONE"
                                 logger.info(f"[BB] SELL blocked: price in middle of bands (pos={bb_pos:.2f})")
