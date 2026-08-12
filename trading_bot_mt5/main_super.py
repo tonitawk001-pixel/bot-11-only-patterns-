@@ -500,7 +500,7 @@ def main_loop():
                 # Extract latest indicator values from M15 for the confirmation engine
                 try:
                     m15_price = float(m15w_ren['close'].iloc[-1])
-                    m15_sma40 = float(i15['smas']['SMA_40'].iloc[-1]) if 'smas' in i15 and 'SMA_40' in i15['smas'].columns else None
+                    m15_sma50 = float(i15['smas']['SMA_50'].iloc[-1]) if 'smas' in i15 and 'SMA_50' in i15['smas'].columns else None
                     m15_sma200 = float(i15['smas']['SMA_200'].iloc[-1]) if 'smas' in i15 and 'SMA_200' in i15['smas'].columns else None
                     m15_rsi = float(i15['rsi'].iloc[-1])
                     m15_prev_rsi = float(i15['rsi'].iloc[-2]) if len(i15['rsi']) >= 2 else None
@@ -639,7 +639,7 @@ def main_loop():
                         engine_result = evaluate_trade_signals(
                             direction=raw_direction,
                             price=m15_price,
-                            ma40=m15_sma40,
+                            ma40=m15_sma50,
                             ma200=m15_sma200,
                             rsi=m15_rsi,
                             prev_rsi=m15_prev_rsi,
