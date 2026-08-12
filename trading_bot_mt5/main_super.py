@@ -600,13 +600,25 @@ def main_loop():
                         m15_pdi = float(i15['di_14']['pdi'].iloc[-1])
                         m15_ndi = float(i15['di_14']['ndi'].iloc[-1])
                         if raw_direction == "BUY" and m15_pdi <= m15_ndi:
-                            blocked_by = f"buy_against_momentum"
+                            blocked_by = "buy_against_momentum"
                             raw_direction = "NONE"
                             logger.info(f"[MOM] BUY blocked: +DI={m15_pdi:.0f} <= -DI={m15_ndi:.0f} (bearish momentum)")
                         elif raw_direction == "SELL" and m15_pdi > m15_ndi:
-                            blocked_by = f"sell_against_momentum"
+                            blocked_by = "sell_against_momentum"
                             raw_direction = "NONE"
                             logger.info(f"[MOM] SELL blocked: +DI={m15_pdi:.0f} > -DI={m15_ndi:.0f} (bullish momentum)")
+                except Exception as e:
+                    pass
+
+                # SELL VOLUME FILTER: sell requires volume >= 0.8x (conviction). BUY unfiltered.
+                try:
+                    if raw_direction == "SELL" and m15_vol is not None and m15_vol_ma is not None:
+                        if m15_vol_ma > 0:
+                            m15_vol_ratio = m15_vol / m15_vol_ma
+                            if m15_vol_ratio < 0.8:
+                                blocked_by = f"sell_low_volume_{m15_vol_ratio:.2f}x"
+                                raw_direction = "NONE"
+                                logger.info(f"[VOL] SELL blocked: low volume {m15_vol_ratio:.2f}x < 0.8x (no conviction)")
                 except Exception as e:
                     pass
 
