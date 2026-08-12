@@ -556,20 +556,7 @@ def main_loop():
                     blocked_by = f"outside_active_hours_{h}h"
                     raw_direction = "NONE"
                     logger.info(f"[SESSION] Outside active hours ({h}h UTC) -- skipping")
-                # ADAPTIVE STOCHASTIC: regime-conditioned zones (data-derived, +$27,538)
-                if raw_direction != "NONE" and m15_stoch_k is not None and not np.isnan(m15_stoch_k):
-                    if strong_trend and raw_direction == "SELL" and (20 <= m15_stoch_k <= 50):
-                        blocked_by = f"trend_sell_stoch_{m15_stoch_k:.0f}_20-50"
-                        raw_direction = "NONE"
-                        logger.info(f"[STOCH] Strong trend SELL blocked: K={m15_stoch_k:.0f} in 20-50")
-                    elif not strong_trend and raw_direction == "BUY" and m15_stoch_k < 35:
-                        blocked_by = f"chop_buy_stoch_{m15_stoch_k:.0f}_lt_35"
-                        raw_direction = "NONE"
-                        logger.info(f"[STOCH] Chop BUY blocked: K={m15_stoch_k:.0f} < 35")
-                    elif not strong_trend and raw_direction == "SELL" and (35 <= m15_stoch_k <= 50):
-                        blocked_by = f"chop_sell_stoch_{m15_stoch_k:.0f}_35-50"
-                        raw_direction = "NONE"
-                        logger.info(f"[STOCH] Chop SELL blocked: K={m15_stoch_k:.0f} in 35-50")
+                # STOCHASTIC FILTER REMOVED (no edge across backtests: best setting helps only 2/4 periods)
 
                 # VOLATILITY FILTER: direction-specific. BUY skips dead (<0.1%). SELL requires 0.2-0.5%.
                 try:
@@ -605,11 +592,7 @@ def main_loop():
                     if 'di_14' in i15 and raw_direction != "NONE":
                         m15_pdi = float(i15['di_14']['pdi'].iloc[-1])
                         m15_ndi = float(i15['di_14']['ndi'].iloc[-1])
-                        if raw_direction == "BUY" and m15_pdi <= m15_ndi:
-                            blocked_by = "buy_against_momentum"
-                            raw_direction = "NONE"
-                            logger.info(f"[MOM] BUY blocked: +DI={m15_pdi:.0f} <= -DI={m15_ndi:.0f} (bearish momentum)")
-                        elif raw_direction == "SELL" and m15_pdi > m15_ndi:
+                        if raw_direction == "SELL" and m15_pdi > m15_ndi:
                             blocked_by = "sell_against_momentum"
                             raw_direction = "NONE"
                             logger.info(f"[MOM] SELL blocked: +DI={m15_pdi:.0f} > -DI={m15_ndi:.0f} (bullish momentum)")
@@ -621,22 +604,14 @@ def main_loop():
                     if raw_direction == "SELL" and m15_vol is not None and m15_vol_ma is not None:
                         if m15_vol_ma > 0:
                             m15_vol_ratio = m15_vol / m15_vol_ma
-                            if m15_vol_ratio < 1.2 or m15_vol_ratio > 2.5:
-                                blocked_by = f"sell_vol_outside_{m15_vol_ratio:.2f}x"
+                            if m15_vol_ratio < 0.8:
+                                blocked_by = f"sell_vol_low_{m15_vol_ratio:.2f}x"
                                 raw_direction = "NONE"
-                                logger.info(f"[VOL] SELL blocked: volume {m15_vol_ratio:.2f}x outside 1.2-2.5x (no conviction or panic)")
+                                logger.info(f"[VOL] SELL blocked: volume {m15_vol_ratio:.2f}x < 0.8x (too quiet)")
                 except Exception as e:
                     pass
 
-                # BUY MACD MOMENTUM: buy requires MACD histogram rising (momentum confirmation)
-                try:
-                    if raw_direction == "BUY" and m15_macd_hist is not None and m15_prev_macd_hist is not None:
-                        if m15_macd_hist <= m15_prev_macd_hist:
-                            blocked_by = "buy_macd_not_rising"
-                            raw_direction = "NONE"
-                            logger.info(f"[MACD] BUY blocked: histogram not rising ({m15_prev_macd_hist:.4f} -> {m15_macd_hist:.4f})")
-                except Exception as e:
-                    pass
+                # MACD FILTER REMOVED (no edge across backtests: BUY histogram gate was harmful -$9,686)
 
                 # ── CONFIRMATION ENGINE: Run if raw direction is BUY or SELL ──
                 engine_result = None
