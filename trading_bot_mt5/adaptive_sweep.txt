@@ -1,0 +1,87 @@
+================================================================================
+  ADAPTIVE ENGINE OPTIMIZATION SWEEP
+  2026-08-12 17:31 UTC
+================================================================================
+
+Pulling 6 months M15...
+Got 11639 candles
+Indicators ready.
+
+Combinations: 2,592
+
+Running sweep...
+
+Done in 369s. 2592 results.
+
+================================================================================
+  TOP 10 ADAPTIVE CONFIGS
+================================================================================
+
+ #1: $+8,548 | 121t WR=43.0% PF=1.45
+   Reward:8 Penalty:10 Decay:0.0 Thresh:35
+   ADX:70(ON) Sess:10(OFF) MACD:100(ON) Ovlp:11(OFF)
+
+ #2: $+8,548 | 121t WR=43.0% PF=1.45
+   Reward:8 Penalty:10 Decay:0.0 Thresh:35
+   ADX:70(ON) Sess:10(OFF) MACD:100(ON) Ovlp:26(OFF)
+
+ #3: $+8,548 | 121t WR=43.0% PF=1.45
+   Reward:8 Penalty:10 Decay:0.0 Thresh:35
+   ADX:70(ON) Sess:10(OFF) MACD:100(ON) Ovlp:11(OFF)
+
+ #4: $+8,548 | 121t WR=43.0% PF=1.45
+   Reward:8 Penalty:10 Decay:0.0 Thresh:35
+   ADX:70(ON) Sess:10(OFF) MACD:100(ON) Ovlp:11(OFF)
+
+ #5: $+8,548 | 121t WR=43.0% PF=1.45
+   Reward:8 Penalty:10 Decay:0.0 Thresh:35
+   ADX:70(ON) Sess:10(OFF) MACD:100(ON) Ovlp:26(OFF)
+
+ #6: $+8,548 | 121t WR=43.0% PF=1.45
+   Reward:8 Penalty:10 Decay:0.0 Thresh:35
+   ADX:70(ON) Sess:10(OFF) MACD:100(ON) Ovlp:26(OFF)
+
+ #7: $+8,548 | 121t WR=43.0% PF=1.45
+   Reward:8 Penalty:10 Decay:0.0 Thresh:35
+   ADX:70(ON) Sess:10(OFF) MACD:100(ON) Ovlp:11(OFF)
+
+ #8: $+8,548 | 121t WR=43.0% PF=1.45
+   Reward:8 Penalty:10 Decay:0.0 Thresh:35
+   ADX:70(ON) Sess:10(OFF) MACD:100(ON) Ovlp:26(OFF)
+
+ #9: $+8,548 | 121t WR=43.0% PF=1.45
+   Reward:8 Penalty:10 Decay:0.0 Thresh:35
+   ADX:70(ON) Sess:10(OFF) MACD:100(ON) Ovlp:11(OFF)
+
+ #10: $+8,548 | 121t WR=43.0% PF=1.45
+   Reward:8 Penalty:10 Decay:0.0 Thresh:35
+   ADX:70(ON) Sess:10(OFF) MACD:100(ON) Ovlp:11(OFF)
+
+================================================================================
+  OPTIMAL ADAPTIVE CONFIG
+================================================================================
+
+  $+8,548 | 121t WR=43.0% PF=1.45
+
+  Learning Parameters:
+    Reward for blocking loser: +8 pts
+    Penalty for blocking winner: -10 pts
+    Decay rate: 0.0 pts/event
+    Activation threshold: 35/100
+    Min trades before activate: 5
+
+  Initial Scores:
+    ADX: 55 | Session: 40 | MACD: 35 | Overlap: 35
+
+  Final Filter States:
+    ADX: 70 (ACTIVE)
+    Session: 10 (OFF)
+    MACD: 100 (ACTIVE)
+    Overlap: 11 (OFF)
+
+  Non-adaptive baseline: ~$+0
+  Adaptive improvement:  $+8,548
+
+================================================================================
+  SAVED
+================================================================================

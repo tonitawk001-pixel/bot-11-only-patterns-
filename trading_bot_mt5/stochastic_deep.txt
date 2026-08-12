@@ -1,0 +1,97 @@
+================================================================================
+  DEEP STOCHASTIC ANALYSIS
+  2026-08-12 17:58 UTC
+================================================================================
+
+Pulling 18 months M15...
+Got 38090 candles
+Running backtest with Stochastic logging...
+Backtest: 451 trades, $+30,184
+Wins: 177, Losses: 274
+
+================================================================================
+  ANALYSIS 1: STOCHASTIC K AT ENTRY — Win Rate by Level
+================================================================================
+
+  BUY:
+    Stoch K Oversold <20: 24t WR=54% PnL=$+6,300 avg=$+263
+    Stoch K Low 20-35: 20t WR=45% PnL=$+2,955 avg=$+148
+    Stoch K Mid-low 35-50: 18t WR=67% PnL=$+4,535 avg=$+252
+    Stoch K Mid-high 50-65: 14t WR=64% PnL=$+5,468 avg=$+391
+    Stoch K High 65-80: 26t WR=46% PnL=$+3,597 avg=$+138
+    Stoch K Overbought >80: 151t WR=38% PnL=$+3,903 avg=$+26
+
+  SELL:
+    Stoch K Oversold <20: 97t WR=33% PnL=$+2,137 avg=$+22
+    Stoch K Low 20-35: 55t WR=33% PnL=$+730 avg=$+13
+    Stoch K Mid-low 35-50: 35t WR=29% PnL=$-1,338 avg=$-38
+    Stoch K Mid-high 50-65: 8t WR=50% PnL=$+2,071 avg=$+259
+    Stoch K High 65-80: 2t WR=0% PnL=$-1,136 avg=$-568
+
+================================================================================
+  ANALYSIS 2: K vs D RELATIONSHIP
+================================================================================
+
+  BUY:
+    K > D: 193t WR=46% PnL=$+25,585 avg=$+133
+    K <= D: 60t WR=38% PnL=$+1,173 avg=$+20
+
+  SELL:
+    K > D: 54t WR=39% PnL=$+4,646 avg=$+86
+    K <= D: 143t WR=30% PnL=$-2,181 avg=$-15
+
+================================================================================
+  ANALYSIS 3: CROSS DETECTION — Did the cross predict correctly?
+================================================================================
+
+  BUY:
+    Bullish cross: 112t WR=48% PnL=$+18,417 avg=$+164
+    No cross: 141t WR=41% PnL=$+8,341 avg=$+59
+
+  SELL:
+    Bullish cross: 7t WR=14% PnL=$-2,063 avg=$-295
+    Bearish cross: 121t WR=30% PnL=$-1,417 avg=$-12
+    No cross: 69t WR=39% PnL=$+5,945 avg=$+86
+
+================================================================================
+  ANALYSIS 4: K-D GAP — Does divergence predict outcome?
+================================================================================
+
+  BUY:
+    K-D gap Tight (0-5): 178t WR=43% PnL=$+16,289 avg=$+92
+    K-D gap Medium (5-15): 66t WR=47% PnL=$+9,257 avg=$+140
+    K-D gap Wide (15+): 9t WR=56% PnL=$+1,213 avg=$+135
+
+  SELL:
+    K-D gap Tight (0-5): 126t WR=30% PnL=$-2,428 avg=$-19
+    K-D gap Medium (5-15): 64t WR=38% PnL=$+4,390 avg=$+69
+    K-D gap Wide (15+): 7t WR=29% PnL=$+503 avg=$+72
+
+================================================================================
+  ANALYSIS 5: STOCHASTIC VARIANT COMPARISON (14-3-3 vs 8-3-3 vs 5-3-3)
+================================================================================
+
+  14-3-3: 233 trades with cross, 90/233 correct (39%)
+
+  8-3-3: 172 trades with cross, 68/172 correct (40%)
+
+  5-3-3: 150 trades with cross, 59/150 correct (39%)
+
+================================================================================
+  ANALYSIS 6: TOP LOSS PATTERNS (Stochastic-specific)
+================================================================================
+
+  BUY losses (141 total):
+    K>80 (overbought): 94/141 losses (67%)
+    K-D tight <3: 67/141 losses (48%)
+    K<20 (oversold): 11/141 losses (8%)
+    K-D gap >15: 4/141 losses (3%)
+
+  SELL losses (133 total):
+    K-D tight <3: 69/133 losses (52%)
+    K<20 (oversold): 65/133 losses (49%)
+    K-D gap >15: 5/133 losses (4%)
+
+================================================================================
+  COMPLETE (3s)
+================================================================================

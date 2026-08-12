@@ -1,0 +1,67 @@
+================================================================================
+  ADAPTIVE FILTER ENGINE — Self-learning from trade outcomes
+  2026-08-12 17:24 UTC
+================================================================================
+
+Pulling 2025 + 2026 M15 data...
+Using: 12529 candles: 2026-02-01 23:00:00 to 2026-08-12 14:15:00
+Indicators ready.
+
+Running adaptive backtest...
+
+================================================================================
+  ADAPTIVE FILTER RESULTS
+================================================================================
+
+  Net PnL: $+4,840
+  Trades: 129 | WR: 40%
+  Wins: 51 | Losses: 78
+
+  FILTER LEARNING:
+
+  ADX>25:
+    Final score: 26/100 (DISABLED)
+    Total blocks: 3
+    Good blocks (blocked losers): 0
+    Bad blocks (blocked winners): 3
+
+  Active Hours:
+    Final score: 38/100 (DISABLED)
+    Total blocks: 51
+    Good blocks (blocked losers): 43
+    Bad blocks (blocked winners): 8
+    Accuracy: 84%
+
+  MACD Gate SELL:
+    Final score: 40/100 (ACTIVE)
+    Total blocks: 0
+    Good blocks (blocked losers): 0
+    Bad blocks (blocked winners): 0
+
+  Overlap SELL Block:
+    Final score: 40/100 (ACTIVE)
+    Total blocks: 0
+    Good blocks (blocked losers): 0
+    Bad blocks (blocked winners): 0
+
+================================================================================
+  COMPARISON: Adaptive vs Fixed
+================================================================================
+
+  Adaptive (all filters self-learning): $+4,840 | 129t
+  Fixed ADX>25 only:                   $+4,441 | 144t WR=38%
+  Difference:                           $+399
+
+================================================================================
+  FILTER SCORE HISTORY (how they learned):
+================================================================================
+  Bar 2000: ADX=25.5 Session=99.5 MACD=40 Overlap=40
+  Bar 4000: ADX=25.5 Session=84.0 MACD=40 Overlap=40
+  Bar 6000: ADX=25.5 Session=99.5 MACD=40 Overlap=40
+  Bar 8000: ADX=25.5 Session=38.5 MACD=40 Overlap=40
+  Bar 10000: ADX=25.5 Session=38.5 MACD=40 Overlap=40
+  Bar 12000: ADX=25.5 Session=38.5 MACD=40 Overlap=40
+
+================================================================================
+  DONE
+================================================================================

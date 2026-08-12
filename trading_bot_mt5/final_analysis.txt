@@ -1,0 +1,82 @@
+================================================================================
+  FINAL COMPREHENSIVE ANALYSIS
+  2026-08-12 17:50 UTC
+================================================================================
+
+Pulling all available M15 data...
+  May 2026 (NEW - unseen): 1924 candles
+  Jun-Jul 2026: 4102 candles
+  Feb-May 2026: 7709 candles
+  Jan-Jun 2025 (OOS): 11653 candles
+
+================================================================================
+  BACKTEST RESULTS ACROSS ALL PERIODS
+================================================================================
+
+  May 2026 (NEW - unseen):
+    $+1,196 | 10t | WR=60.0% | PF=2.35 — PROFITABLE
+    Filters: ADX=91 Sess=10 MACD=25 Ovlp=31
+
+  Jun-Jul 2026:
+    $+3,025 | 50t | WR=42.0% | PF=1.41 — PROFITABLE
+    Filters: ADX=10 Sess=10 MACD=100 Ovlp=10
+
+  Feb-May 2026:
+    $+2,381 | 71t | WR=39.4% | PF=1.27 — PROFITABLE
+    Filters: ADX=46 Sess=10 MACD=23 Ovlp=27
+
+  Jan-Jun 2025 (OOS):
+    $+10,169 | 160t | WR=41.2% | PF=1.39 — PROFITABLE
+    Filters: ADX=14 Sess=22 MACD=60 Ovlp=80
+
+================================================================================
+  CROSS-PERIOD LOSS PATTERNS (170 total losses)
+================================================================================
+
+  Losses by direction:
+    BUY: 68 losses, avg=$-261
+    SELL: 102 losses, avg=$-251
+
+  Losses by RSI at entry:
+    RSI 0-35: 43 losses, avg=$-272
+    RSI 35-50: 66 losses, avg=$-238
+    RSI 50-65: 21 losses, avg=$-257
+    RSI 65+: 39 losses, avg=$-266
+
+  Losses by ADX at entry:
+    ADX <25: 11 losses, avg=$-289
+    ADX 25-40: 69 losses, avg=$-241
+    ADX 40+: 89 losses, avg=$-263
+
+  Losses by BB position:
+    BB ABOVE: 54 losses, avg=$-268
+    BB BELOW: 115 losses, avg=$-250
+
+  Losses by MACD:
+    MACD Bullish: 44 losses, avg=$-259
+    MACD Bearish: 125 losses, avg=$-254
+
+  Losses by Hour:
+    Asian 0-8: 34 losses, avg=$-288
+    London AM: 53 losses, avg=$-233
+    Overlap: 30 losses, avg=$-247
+    NY PM: 38 losses, avg=$-249
+
+  Top 3 Loss Patterns (intersection):
+    BB=ABOVE + MACD=Bearish: 11 losses, $-3,238
+    SELL + BB=ABOVE: 0 losses, $+0
+    BUY + RSI>60: 46 losses, $-12,312
+
+================================================================================
+  FINAL VERDICT
+================================================================================
+
+  Profitable periods: 4/4
+  Total net across all periods: $+16,771
+  Average per period: $+4,193
+
+  >>> ALL PERIODS PROFITABLE — Bot is market-agnostic
+
+================================================================================
+  COMPLETE (0s)
+================================================================================

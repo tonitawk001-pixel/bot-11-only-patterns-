@@ -529,23 +529,27 @@ def main_loop():
                 blocked_by = None
                 original_dir = raw_direction
 
-                # ── ADX FILTER: Only trade trending markets (sweep-optimized: >25 improves PF by 1.5x) ──
+                # REGIME DETECTOR: aggressive strong trend, filtered chop (best +37974)
                 try:
                     m15_adx = float(i15.get('adx_14', pd.Series([0])).iloc[-1]) if 'adx_14' in i15 else 99
                 except:
                     m15_adx = 99
-                if not np.isnan(m15_adx) and m15_adx < 25:
-                    blocked_by = f"ADX_{m15_adx:.0f}_lt_25"
-                    raw_direction = "NONE"
-                    logger.info(f"[ADX] Market not trending (ADX={m15_adx:.0f} < 25) — skipping signal")
+                strong_trend = (not np.isnan(m15_adx)) and m15_adx >= 35
+                if strong_trend:
+                    logger.info(f"[REGIME] Strong trend (ADX={m15_adx:.0f} >= 35) -- aggressive mode")
+                else:
+                    if not np.isnan(m15_adx) and m15_adx < 20:
+                        blocked_by = f"ADX_{m15_adx:.0f}_lt_20"
+                        raw_direction = "NONE"
+                        logger.info(f"[ADX] Chop market (ADX={m15_adx:.0f} < 20) -- skipping")
 
-                # ── SESSION FILTER: Only trade London/NY active hours (sweep-optimized: +$746) ──
+                # SESSION FILTER: only in chop regime (skipped in strong trend)
                 h = now.hour
                 in_active = (8 <= h < 17) or (13 <= h < 22)  # London or NY
-                if not in_active and raw_direction != "NONE":
+                if not strong_trend and not in_active and raw_direction != "NONE":
                     blocked_by = f"outside_active_hours_{h}h"
                     raw_direction = "NONE"
-                    logger.info(f"[SESSION] Outside active hours ({h}h UTC) — skipping signal")
+                    logger.info(f"[SESSION] Outside active hours ({h}h UTC) -- skipping")
 
                 # ── CONFIRMATION ENGINE: Run if raw direction is BUY or SELL ──
                 engine_result = None

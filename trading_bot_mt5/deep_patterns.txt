@@ -1,0 +1,139 @@
+================================================================================
+  DEEP PATTERN ANALYSIS — Loss Reduction
+  2026-08-12 16:59 UTC
+================================================================================
+
+Pulling 6 months M15...
+Got 11639 candles
+Running baseline backtest...
+Backtest: 98 trades, $+11,301.98, WR=46.9%
+Wins: 46, Losses: 52
+
+================================================================================
+  PATTERN ANALYSIS: What separates winners from losers?
+================================================================================
+
+  RSI at Entry:
+    0-40: 41t WR=51% PnL=$+5,927 avg=$+145
+    40-55: 31t WR=42% PnL=$+2,385 avg=$+77
+    55-65: 10t WR=60% PnL=$+2,286 avg=$+229
+    65-80: 14t WR=36% PnL=$+559 avg=$+40
+
+  ADX at Entry:
+    20-30: 26t WR=62% PnL=$+6,393 avg=$+246
+    30-45: 43t WR=35% PnL=$+325 avg=$+8
+    45-100: 29t WR=52% PnL=$+4,585 avg=$+158
+
+  BB Position:
+    ABOVE: 25t WR=44% PnL=$+2,298 avg=$+92
+    BELOW: 73t WR=48% PnL=$+9,003 avg=$+123
+
+  Hour of Day:
+    8-13: 48t WR=56% PnL=$+10,082 avg=$+210
+    13-17: 29t WR=31% PnL=$-1,060 avg=$-37
+    17-22: 21t WR=48% PnL=$+2,280 avg=$+109
+
+  Stochastic K:
+    0-30: 58t WR=48% PnL=$+7,373 avg=$+127
+    30-50: 12t WR=50% PnL=$+1,845 avg=$+154
+    50-70: 11t WR=55% PnL=$+1,626 avg=$+148
+    70-100: 17t WR=35% PnL=$+459 avg=$+27
+
+  ATR:
+    0-7: 13t WR=54% PnL=$+2,336 avg=$+180
+    7-10: 33t WR=52% PnL=$+5,576 avg=$+169
+    10-15: 33t WR=36% PnL=$+851 avg=$+26
+    15-100: 19t WR=53% PnL=$+2,539 avg=$+134
+
+  Volume Ratio:
+    0-0.5: 3t WR=67% PnL=$+673 avg=$+224
+    0.5-1.0: 32t WR=38% PnL=$+1,808 avg=$+56
+    1.0-2.0: 59t WR=51% PnL=$+8,340 avg=$+141
+    2.0-100: 4t WR=50% PnL=$+481 avg=$+120
+
+  Bars Held:
+    0-10: 6t WR=33% PnL=$+271 avg=$+45
+    10-40: 18t WR=50% PnL=$+2,658 avg=$+148
+    40-100: 46t WR=46% PnL=$+4,087 avg=$+89
+    100-1000: 27t WR=48% PnL=$+3,728 avg=$+138
+
+  MACD Bullish:
+    True: 22t WR=45% PnL=$+2,376 avg=$+108
+    False: 76t WR=47% PnL=$+8,926 avg=$+117
+
+================================================================================
+  DIRECTION PATTERNS
+================================================================================
+
+  BUY:
+    Total: 34t WR=44% PnL=$+3,611
+    Loss patterns:
+      BB=above: 14/19 losses
+      MACD=bear: 7/19 losses
+      RSI=73>65: 6/19 losses
+      StochK=90>80: 2/19 losses
+      StochK=89>80: 2/19 losses
+
+  SELL:
+    Total: 64t WR=48% PnL=$+7,691
+    Loss patterns:
+      MACD=bear: 33/33 losses
+
+================================================================================
+  CANDIDATE FILTERS — Impact on 6-month backtest
+================================================================================
+
+  BASELINE: 98t PnL=$+11,302 WR=47%
+
+  KEEP: No SELL in overlap (13-17h)
+    PnL change: $+1,785 (new: $+13,087)
+    Win retention: 87% (40/46 kept)
+    Loss reduction: 31% (16/52 blocked)
+
+  SKIP: No trade with vol ratio < 0.3
+    PnL change: $+0 (new: $+11,302)
+    Win retention: 100% (46/46 kept)
+    Loss reduction: 0% (0/52 blocked)
+
+  SKIP: MACD mandatory for SELL
+    PnL change: $+0 (new: $+11,302)
+    Win retention: 100% (46/46 kept)
+    Loss reduction: 0% (0/52 blocked)
+
+  SKIP: No BUY when ATR > 12
+    PnL change: $-282 (new: $+11,020)
+    Win retention: 91% (42/46 kept)
+    Loss reduction: 15% (8/52 blocked)
+
+  SKIP: No BUY when Stoch K > 80
+    PnL change: $-684 (new: $+10,618)
+    Win retention: 87% (40/46 kept)
+    Loss reduction: 19% (10/52 blocked)
+
+  SKIP: No BUY with MACD bearish
+    PnL change: $-1,235 (new: $+10,067)
+    Win retention: 89% (41/46 kept)
+    Loss reduction: 13% (7/52 blocked)
+
+  SKIP: BB mandatory for BUY (must be below mid)
+    PnL change: $-2,298 (new: $+9,003)
+    Win retention: 76% (35/46 kept)
+    Loss reduction: 27% (14/52 blocked)
+
+  SKIP: No SELL with RSI < 35
+    PnL change: $-3,337 (new: $+7,965)
+    Win retention: 70% (32/46 kept)
+    Loss reduction: 27% (14/52 blocked)
+
+================================================================================
+  COMBINED FILTERS (apply all positive-impact rules)
+================================================================================
+
+  Combined result: 73 trades, PnL=$+9,003, WR=48%
+  Original: 98 trades, PnL=$+11,302, WR=47%
+  Improvement: $-2,298
+  Filters applied: No SELL in overlap (13-17h)
+
+================================================================================
+  ANALYSIS COMPLETE (0s)
+================================================================================

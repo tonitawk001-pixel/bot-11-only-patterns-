@@ -1,0 +1,32 @@
+================================================================================
+  TODAY'S REJECTED TRADES ANALYSIS
+  2026-08-12 13:48 UTC
+================================================================================
+
+Pulling M15 data...
+Got 2024 bars: 2026-07-13 14:00:00 to 2026-08-12 13:45:00
+Today's bars: 56 (2026-08-12 00:00:00 to 2026-08-12 13:45:00)
+
+================================================================================
+  REJECTED TRADE SIMULATION
+================================================================================
+
+  Rejected trades today: 3
+  Total PnL if ALL were taken: $-88.87
+  Rejected trades PnL (blocked by bot): $-69.96
+  Approved trades PnL: $-18.91
+
+  --- DETAIL: Each rejected trade ---
+  2026-08-12 02:30 | BUY breakout | RSI=72.8 ADX=48.5
+    Entry: $4405.4 Exit: $4382.37 (sl) PnL: $-23.03
+    Blocked: outside hours (2h) -> GOOD BLOCK
+  2026-08-12 02:45 | BUY breakout | RSI=75.9 ADX=52.4
+    Entry: $4411.24 Exit: $4387.69 (sl) PnL: $-23.55
+    Blocked: outside hours (2h) -> GOOD BLOCK
+  2026-08-12 03:00 | BUY breakout | RSI=74.7 ADX=56.1
+    Entry: $4410.5 Exit: $4387.12 (sl) PnL: $-23.38
+    Blocked: outside hours (3h) -> GOOD BLOCK
+
+  >>> VERDICT:
+  Bot CORRECTLY blocked losing trades ($-69.96 avoided)
+================================================================================

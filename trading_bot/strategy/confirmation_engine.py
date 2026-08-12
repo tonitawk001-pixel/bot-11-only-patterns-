@@ -65,6 +65,8 @@ def validate_breakout_momentum_buy(
         return _log(False, "BREAKOUT", "RSI unavailable")
     if rsi <= 68:
         return _log(False, "BREAKOUT", f"RSI={rsi:.1f} — not in breakout zone (>68 required)")
+    if rsi > 80:
+        return _log(False, "BREAKOUT", f"RSI={rsi:.1f} > 80 — extreme overbought, wait for pullback (data: +$1,444 improvement)")
 
     # Volume: bonus confirmation, not required (sweep-optimized)
     vol_bonus = ""
@@ -251,8 +253,8 @@ def validate_rsi_sell(rsi: Optional[float], prev_rsi: Optional[float] = None) ->
         return _log(False, "RSI", "RSI data unavailable")
     if rsi >= 50:
         return _log(False, "RSI", f"RSI={rsi:.1f} >= 50 — not in bearish zone")
-    if rsi < 30:
-        return _log(False, "RSI", f"RSI={rsi:.1f} < 30 — oversold, do not chase bottom")
+    if rsi < 45:
+        return _log(False, "RSI", f"RSI={rsi:.1f} < 45 — selling too low (data: +$8,784 improvement blocking RSI<45 SELLs)")
 
     turning_down = prev_rsi is not None and rsi < prev_rsi
     if not turning_down and prev_rsi is not None:
@@ -505,7 +507,22 @@ def evaluate_sell_signals(
     checks["location"] = {"pass": loc_ok, "message": loc_msg}
     print(f"  [5/5 - Location] {loc_msg}")
 
-    # Only need 3/5 checks (sweep-optimized: 3 checks gives better PF than 5)
+    # ── MACD MANDATORY GATE: If MACD is bullish, SELL is blocked regardless ──
+    # Data proved: 6/8 SELLs with bullish MACD were losers (-$126). Non-negotiable.
+    if macd_line is not None and macd_signal is not None and not np.isnan(macd_line) and not np.isnan(macd_signal):
+        if macd_line > macd_signal:
+            print(f"  [GATE] MACD is BULLISH (line {macd_line:.4f} > signal {macd_signal:.4f}) — SELL BLOCKED")
+            print(f"\n  >>> DECISION: NO TRADE — MACD bullish gate: cannot short into bullish momentum")
+            return {
+                "direction": "SELL",
+                "decision": False,
+                "confidence": 0,
+                "option": 0,
+                "checks": checks,
+                "reason": "SELL rejected: MACD bullish gate — cannot short into bullish momentum (data: 6/8 such SELLs were losers)",
+            }
+
+    # Need 3/5 checks (sweep-optimized) but MACD bullish already hard-blocked above
     check_bools = [trend_ok, rsi_ok, macd_ok, stoch_ok, loc_ok]
     passed_count = sum(check_bools)
     passed_names = [k for k, v in checks.items() if v["pass"]]

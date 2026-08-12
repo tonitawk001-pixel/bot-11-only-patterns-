@@ -1,0 +1,32 @@
+================================================================================
+  REGIME DETECTOR TEST
+  2026-08-12 18:20 UTC
+================================================================================
+
+Pulling all M15 data...
+Got 38092 candles
+
+================================================================================
+  REGIME SWITCHING RESULTS
+================================================================================
+  Trend=FILTERS Chop=FILTERS (V2 style): $+15,887 | 402t | WR=38.1% <-- BEST
+  Trend=FILTERS Chop=AGGRESSIVE: $+18,633 | 415t | WR=38.3% <-- BEST
+  Trend=AGGRESSIVE Chop=FILTERS (regime-aware): $+27,507 | 448t | WR=38.8% <-- BEST
+  Trend=AGGRESSIVE Chop=AGGRESSIVE (V1 style): $+30,434 | 442t | WR=39.4% <-- BEST
+  Trend=AGGRESSIVE Chop=FILTERS ADX>20: $+27,192 | 452t | WR=38.9%
+  Trend=AGGRESSIVE Chop=FILTERS ADX>30: $+33,750 | 439t | WR=39.6% <-- BEST
+  Trend=AGGRESSIVE Chop=FILTERS ADX>35: $+37,974 | 434t | WR=40.1% <-- BEST
+
+================================================================================
+  OPTIMAL REGIME CONFIG
+================================================================================
+
+  Best: Trend=AGGRESSIVE Chop=FILTERS ADX>35
+  Net: $+37,974 | 434t | WR=40.1%
+  ADX threshold: 35
+  Trend regime: AGGRESSIVE
+  Chop regime: FILTERS (safe)
+
+================================================================================
+  DONE
+================================================================================

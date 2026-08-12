@@ -1,0 +1,212 @@
+================================================================================
+  LOSS REDUCTION OPTIMIZATION
+  2026-08-12 16:53 UTC
+================================================================================
+
+Loaded 29 trades with full indicator data
+Wins: 16 ($+423.12)
+Losses: 13 ($-459.30)
+
+================================================================================
+  ANALYSIS 1: INDICATOR THRESHOLDS — Win vs Loss Separation
+================================================================================
+
+  RSI at Entry:
+    Wins:  min=25.3 max=74.3 avg=52.1
+    Losses: min=44.1 max=69.6 avg=58.5
+
+  ADX at Entry:
+    Wins:  min=19.2 max=66.1 avg=41.2
+    Losses: min=20.2 max=53.9 avg=38.5
+
+  MACD Histogram:
+    Wins:  min=-6.9 max=7.8 avg=0.3
+    Losses: min=-4.5 max=5.0 avg=1.0
+
+  ATR at Entry:
+    Wins:  min=5.7 max=17.6 avg=9.2
+    Losses: min=5.1 max=13.3 avg=8.9
+
+================================================================================
+  ANALYSIS 2: FILTER EFFECTIVENESS ON ACTUAL TRADES
+================================================================================
+Testing 375 filter combinations...
+
+  Top results by P&L improvement:
+
+  #1: PnL=$+68.20 (improved $+104.38)
+    Win retention: 18.8% (3/16 kept)
+    Loss reduction: 100.0% (13/13 blocked)
+    Blocked win PnL: $+354.92 | Blocked loss PnL: $-459.30
+    Rules: ADX>0 RSI<55 MACDbear:True Stoch:True BBmid:True Hours:False
+
+  #2: PnL=$+68.20 (improved $+104.38)
+    Win retention: 18.8% (3/16 kept)
+    Loss reduction: 100.0% (13/13 blocked)
+    Blocked win PnL: $+354.92 | Blocked loss PnL: $-459.30
+    Rules: ADX>0 RSI<55 MACDbear:True Stoch:True BBmid:True Hours:False
+
+  #3: PnL=$+68.20 (improved $+104.38)
+    Win retention: 18.8% (3/16 kept)
+    Loss reduction: 100.0% (13/13 blocked)
+    Blocked win PnL: $+354.92 | Blocked loss PnL: $-459.30
+    Rules: ADX>0 RSI<55 MACDbear:True Stoch:False BBmid:True Hours:False
+
+  #4: PnL=$+68.20 (improved $+104.38)
+    Win retention: 18.8% (3/16 kept)
+    Loss reduction: 100.0% (13/13 blocked)
+    Blocked win PnL: $+354.92 | Blocked loss PnL: $-459.30
+    Rules: ADX>0 RSI<55 MACDbear:True Stoch:False BBmid:True Hours:False
+
+  #5: PnL=$+68.20 (improved $+104.38)
+    Win retention: 18.8% (3/16 kept)
+    Loss reduction: 100.0% (13/13 blocked)
+    Blocked win PnL: $+354.92 | Blocked loss PnL: $-459.30
+    Rules: ADX>0 RSI<60 MACDbear:True Stoch:True BBmid:True Hours:False
+
+  #6: PnL=$+68.20 (improved $+104.38)
+    Win retention: 18.8% (3/16 kept)
+    Loss reduction: 100.0% (13/13 blocked)
+    Blocked win PnL: $+354.92 | Blocked loss PnL: $-459.30
+    Rules: ADX>0 RSI<60 MACDbear:True Stoch:True BBmid:True Hours:False
+
+  #7: PnL=$+68.20 (improved $+104.38)
+    Win retention: 18.8% (3/16 kept)
+    Loss reduction: 100.0% (13/13 blocked)
+    Blocked win PnL: $+354.92 | Blocked loss PnL: $-459.30
+    Rules: ADX>0 RSI<60 MACDbear:True Stoch:False BBmid:True Hours:False
+
+  #8: PnL=$+68.20 (improved $+104.38)
+    Win retention: 18.8% (3/16 kept)
+    Loss reduction: 100.0% (13/13 blocked)
+    Blocked win PnL: $+354.92 | Blocked loss PnL: $-459.30
+    Rules: ADX>0 RSI<60 MACDbear:True Stoch:False BBmid:True Hours:False
+
+  #9: PnL=$+68.20 (improved $+104.38)
+    Win retention: 18.8% (3/16 kept)
+    Loss reduction: 100.0% (13/13 blocked)
+    Blocked win PnL: $+354.92 | Blocked loss PnL: $-459.30
+    Rules: ADX>0 RSI<65 MACDbear:True Stoch:True BBmid:True Hours:False
+
+  #10: PnL=$+68.20 (improved $+104.38)
+    Win retention: 18.8% (3/16 kept)
+    Loss reduction: 100.0% (13/13 blocked)
+    Blocked win PnL: $+354.92 | Blocked loss PnL: $-459.30
+    Rules: ADX>0 RSI<65 MACDbear:True Stoch:True BBmid:True Hours:False
+
+  #11: PnL=$+68.20 (improved $+104.38)
+    Win retention: 18.8% (3/16 kept)
+    Loss reduction: 100.0% (13/13 blocked)
+    Blocked win PnL: $+354.92 | Blocked loss PnL: $-459.30
+    Rules: ADX>0 RSI<65 MACDbear:True Stoch:False BBmid:True Hours:False
+
+  #12: PnL=$+68.20 (improved $+104.38)
+    Win retention: 18.8% (3/16 kept)
+    Loss reduction: 100.0% (13/13 blocked)
+    Blocked win PnL: $+354.92 | Blocked loss PnL: $-459.30
+    Rules: ADX>0 RSI<65 MACDbear:True Stoch:False BBmid:True Hours:False
+
+  #13: PnL=$+68.20 (improved $+104.38)
+    Win retention: 18.8% (3/16 kept)
+    Loss reduction: 100.0% (13/13 blocked)
+    Blocked win PnL: $+354.92 | Blocked loss PnL: $-459.30
+    Rules: ADX>15 RSI<55 MACDbear:True Stoch:True BBmid:True Hours:False
+
+  #14: PnL=$+68.20 (improved $+104.38)
+    Win retention: 18.8% (3/16 kept)
+    Loss reduction: 100.0% (13/13 blocked)
+    Blocked win PnL: $+354.92 | Blocked loss PnL: $-459.30
+    Rules: ADX>15 RSI<55 MACDbear:True Stoch:False BBmid:True Hours:False
+
+  #15: PnL=$+68.20 (improved $+104.38)
+    Win retention: 18.8% (3/16 kept)
+    Loss reduction: 100.0% (13/13 blocked)
+    Blocked win PnL: $+354.92 | Blocked loss PnL: $-459.30
+    Rules: ADX>15 RSI<55 MACDbear:True Stoch:False BBmid:True Hours:False
+
+================================================================================
+  BEST BALANCED FILTERS (High win retention + High loss reduction)
+================================================================================
+
+  #1: Score=67.6 | PnL=$-4.80 | WinKeep=56.2% | LossBlock=84.6%
+    Rules: ADX>0 RSI<55 MACDbear:False BBmid:True Hours:False
+
+  #2: Score=67.6 | PnL=$-4.80 | WinKeep=56.2% | LossBlock=84.6%
+    Rules: ADX>0 RSI<55 MACDbear:False BBmid:True Hours:False
+
+  #3: Score=67.6 | PnL=$-4.80 | WinKeep=56.2% | LossBlock=84.6%
+    Rules: ADX>0 RSI<55 MACDbear:False BBmid:True Hours:False
+
+  #4: Score=67.6 | PnL=$-4.80 | WinKeep=56.2% | LossBlock=84.6%
+    Rules: ADX>0 RSI<60 MACDbear:False BBmid:True Hours:False
+
+  #5: Score=67.6 | PnL=$-4.80 | WinKeep=56.2% | LossBlock=84.6%
+    Rules: ADX>0 RSI<60 MACDbear:False BBmid:True Hours:False
+
+  #6: Score=67.6 | PnL=$-4.80 | WinKeep=56.2% | LossBlock=84.6%
+    Rules: ADX>0 RSI<60 MACDbear:False BBmid:True Hours:False
+
+  #7: Score=67.6 | PnL=$-4.80 | WinKeep=56.2% | LossBlock=84.6%
+    Rules: ADX>0 RSI<65 MACDbear:False BBmid:True Hours:False
+
+  #8: Score=67.6 | PnL=$-4.80 | WinKeep=56.2% | LossBlock=84.6%
+    Rules: ADX>0 RSI<65 MACDbear:False BBmid:True Hours:False
+
+  #9: Score=67.6 | PnL=$-4.80 | WinKeep=56.2% | LossBlock=84.6%
+    Rules: ADX>0 RSI<65 MACDbear:False BBmid:True Hours:False
+
+  #10: Score=67.6 | PnL=$-4.80 | WinKeep=56.2% | LossBlock=84.6%
+    Rules: ADX>15 RSI<55 MACDbear:False BBmid:True Hours:False
+
+================================================================================
+  SINGLE FILTER IMPACT (One rule at a time)
+================================================================================
+
+  ADX > 20:
+    Kept: 28 trades, PnL=$-103.58 (WR=54%)
+    Blocked: 1 trades, PnL=$+67.40
+    Win retention: 15/16 | Loss reduction: 0/13
+
+  ADX > 25:
+    Kept: 25 trades, PnL=$+6.29 (WR=60%)
+    Blocked: 4 trades, PnL=$-42.47
+    Win retention: 15/16 | Loss reduction: 3/13
+
+  RSI < 60 on BUY:
+    Kept: 19 trades, PnL=$-272.04 (WR=47%)
+    Blocked: 10 trades, PnL=$+235.86
+    Win retention: 9/16 | Loss reduction: 3/13
+
+  RSI < 65 on BUY:
+    Kept: 22 trades, PnL=$-273.43 (WR=45%)
+    Blocked: 7 trades, PnL=$+237.25
+    Win retention: 10/16 | Loss reduction: 1/13
+
+  MACD not bearish:
+    Kept: 20 trades, PnL=$-16.26 (WR=45%)
+    Blocked: 9 trades, PnL=$-19.92
+    Win retention: 9/16 | Loss reduction: 2/13
+
+  Active hours only:
+    Kept: 16 trades, PnL=$+108.55 (WR=69%)
+    Blocked: 13 trades, PnL=$-144.73
+    Win retention: 11/16 | Loss reduction: 8/13
+
+  Not above BB mid on BUY:
+    Kept: 17 trades, PnL=$-198.79 (WR=53%)
+    Blocked: 12 trades, PnL=$+162.61
+    Win retention: 9/16 | Loss reduction: 5/13
+
+  ATR < 10:
+    Kept: 21 trades, PnL=$-15.99 (WR=52%)
+    Blocked: 8 trades, PnL=$-20.19
+    Win retention: 11/16 | Loss reduction: 3/13
+
+  Not SELL with MACD bull:
+    Kept: 21 trades, PnL=$+89.81 (WR=67%)
+    Blocked: 8 trades, PnL=$-125.99
+    Win retention: 14/16 | Loss reduction: 6/13
+
+================================================================================
+  ANALYSIS COMPLETE
+================================================================================
