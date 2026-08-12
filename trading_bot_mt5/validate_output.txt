@@ -1,61 +1,58 @@
 ======================================================================
   LIVE VALIDATION — v2.0 Confirmation Engine
-  2026-08-12 15:22:40 UTC
+  2026-08-12 15:40:21 UTC
 ======================================================================
 
 Account: 314326 | Server: ACCMIntl-Demo
 Balance: $420.32 | Equity: $420.32
 
 Pulling M15 data for XAUUSD...
-Got 460 M15 candles: 2026-08-05 15:30:00 to 2026-08-12 15:15:00
+Got 460 M15 candles: 2026-08-05 15:45:00 to 2026-08-12 15:30:00
 
 Computing indicators...
-2026-08-12 18:22:40 | INFO     | TradingBot | Logger initialized. Log directory: C:\Users\ASUS\logs
+2026-08-12 18:40:21 | INFO     | TradingBot | Logger initialized. Log directory: C:\Users\ASUS\logs
 
 ==================================================
   CURRENT M15 MARKET STATE
 ==================================================
-  Price:     $4426.92
-  RSI(14):   55.4
-  SMA 40:    4412.85
-  SMA 200:   4387.27
-  BB Upper:  4438.08
-  BB Mid:    4421.32
-  BB Lower:  4404.55
-  MACD Line: 4.9796
-  MACD Sig:  5.4055
-  MACD Hist: -0.4259
-  Stoch K:   72.7
-  Stoch D:   72.9
-  Volume:    4583
-  Vol MA:    8305
+  Price:     $4420.76
+  RSI(14):   46.6
+  SMA 40:    4413.52
+  SMA 200:   4387.66
+  BB Upper:  4437.63
+  BB Mid:    4421.34
+  BB Lower:  4405.04
+  MACD Line: 3.9735
+  MACD Sig:  5.0481
+  MACD Hist: -1.0747
+  Stoch K:   68.8
+  Stoch D:   70.0
+  Volume:    4946
+  Vol MA:    8561
 
 ======================================================================
   RUNNING CONFIRMATION ENGINE
 ======================================================================
 
 ======================================================================
-[2026-08-12 15:22:40 UTC] EVALUATING BUY SIGNAL @ $4426.92
+[2026-08-12 15:40:21 UTC] EVALUATING BUY SIGNAL @ $4420.76
 ======================================================================
-  [2026-08-12 15:22:40 UTC] [PASS] TREND: MA40 (4412.85) > MA200 (4387.27) — bullish structure confirmed
-  [Option 1 - Breakout] [2026-08-12 15:22:40 UTC] [FAIL] BREAKOUT: RSI=55.4 — not in breakout zone (>68 required)
-  [Option 2 - Pullback] [2026-08-12 15:22:40 UTC] [FAIL] PULLBACK: Price OK but MACD histogram not rising (-0.4259 <= -0.3848)
-
-  >>> DECISION: NO TRADE — BUY rejected: breakout, pullback checks failed
+  [2026-08-12 15:40:21 UTC] [PASS] TREND: MA40 (4413.52) > MA200 (4387.66) — bullish structure confirmed
+  [Stoch Zone] FAIL: Stochastic K=68.8 outside sweet-spot 35-65
 
 ======================================================================
-[2026-08-12 15:22:40 UTC] EVALUATING SELL SIGNAL @ $4426.92
+[2026-08-12 15:40:21 UTC] EVALUATING SELL SIGNAL @ $4420.76
 ======================================================================
-  [1/5 - Trend] [2026-08-12 15:22:40 UTC] [PASS] TREND: Price (4426.92) rejected at Upper BB (4438.08) — bearish reversal setup
-  [2/5 - RSI] [2026-08-12 15:22:40 UTC] [FAIL] RSI: RSI=55.4 >= 50 — not in bearish zone
-  [3/5 - MACD] [2026-08-12 15:22:40 UTC] [PASS] MACD: MACD line (4.9796) < Signal (5.4055), histogram negative (-0.4259) and declining
-  [4/5 - Stochastic] [2026-08-12 15:22:40 UTC] [FAIL] STOCH: No bearish cross (K=72.7 D=72.9, prev K=71.6 D=75.3)
-  [5/5 - Location] [2026-08-12 15:22:40 UTC] [PASS] LOCATION: Price (4426.92) safely above Lower BB (4404.55, dist=0.51%)
+  [1/5 - Trend] [2026-08-12 15:40:21 UTC] [FAIL] TREND: Price (4420.76) >= MA40 (4413.52) — no bearish structure
+  [2/5 - RSI] [2026-08-12 15:40:21 UTC] [PASS] RSI: RSI=46.6 in bearish zone (30-50) and declining
+  [3/5 - MACD] [2026-08-12 15:40:21 UTC] [PASS] MACD: MACD line (3.9735) < Signal (5.0481), histogram negative (-1.0747) and declining
+  [4/5 - Stochastic] [2026-08-12 15:40:21 UTC] [FAIL] STOCH: No bearish cross (K=68.8 D=70.0, prev K=69.6 D=71.9)
+  [5/5 - Location] [2026-08-12 15:40:21 UTC] [PASS] LOCATION: Price (4420.76) safely above Lower BB (4405.04, dist=0.36%)
 
   >>> DECISION: SELL (3/5 checks passed, Confidence: 85%)
 
   Current Spread: $0.35
-  Bid: $4426.94 | Ask: $4427.29
+  Bid: $4420.76 | Ask: $4421.11
 
 ======================================================================
   VALIDATION COMPLETE — Engine is operational

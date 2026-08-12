@@ -1,0 +1,28 @@
+================================================================================
+  VERIFY CRITICAL FIX: SMA 200 + BUY path
+  2026-08-12 15:33 UTC
+================================================================================
+
+[1] Candles pulled: 300 (bot now uses 300)
+2026-08-12 18:33:36 | INFO     | TradingBot | Logger initialized. Log directory: C:\Users\ASUS\logs
+
+[2] SMA 40: 4413.55
+    SMA 200: 4387.66
+    SMA 200 is NaN: False
+    PASS: SMA 200 computes correctly
+
+[3] Trend filter (real values):
+    [2026-08-12 15:33:36 UTC] [PASS] TREND: MA40 (4413.55) > MA200 (4387.66) — bullish structure confirmed
+
+[4] Test: can trend filter ever return True?
+    real values: PASS — [2026-08-12 15:33:36 UTC] [PASS] TREND: MA40 (4413.55) > MA200 (4387.66) — bullish structure confirmed
+    bullish (40>200): PASS — [2026-08-12 15:33:36 UTC] [PASS] TREND: MA40 (4400.00) > MA200 (4300.00) — bullish structure confirmed
+    bearish (40<200): FAIL — [2026-08-12 15:33:36 UTC] [FAIL] TREND: MA40 (4300.00) <= MA200 (4400.00) — no bullish trend
+    NaN ma40: FAIL — [2026-08-12 15:33:36 UTC] [FAIL] TREND: MA40=nan, MA200=4300.0 — insufficient data
+    NaN ma200: FAIL — [2026-08-12 15:33:36 UTC] [FAIL] TREND: MA40=4400.0, MA200=nan — insufficient data
+
+================================================================================
+  VERIFICATION COMPLETE
+================================================================================
+
+  RESULT: FIX CONFIRMED — BUY path works

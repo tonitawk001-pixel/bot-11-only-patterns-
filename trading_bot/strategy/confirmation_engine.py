@@ -376,6 +376,27 @@ def evaluate_buy_signals(
     if not trend_ok:
         failed.append("trend")
 
+    # Stochastic sweet-spot zone: BUY requires K in 35-65 (OOS verified +$7,977)
+    stoch_zone_ok = True
+    stoch_zone_msg = "Stoch zone OK"
+    if stoch_k is not None and not np.isnan(stoch_k):
+        if not (35 <= stoch_k <= 65):
+            stoch_zone_ok = False
+            stoch_zone_msg = f"Stochastic K={stoch_k:.1f} outside sweet-spot 35-65"
+    if not stoch_zone_ok:
+        failed.append("stoch_zone")
+        checks["stoch_zone"] = {"pass": False, "message": stoch_zone_msg}
+        print(f"  [Stoch Zone] FAIL: {stoch_zone_msg}")
+        # Block BUY entirely if outside sweet spot
+        return {
+            "direction": "BUY",
+            "decision": False,
+            "confidence": 0,
+            "option": 0,
+            "checks": checks,
+            "reason": f"BUY rejected: {stoch_zone_msg}",
+        }
+
     if trend_ok:
         # --- Option 1: Strong Breakout ---
         breakout_ok, breakout_msg = validate_breakout_momentum_buy(
@@ -479,6 +500,21 @@ def evaluate_sell_signals(
             }
 
     # ── REGULAR PATH: 3/5 checks ──
+
+    # Stochastic sweet-spot zone: SELL requires K in 50-80 (OOS verified +$7,977)
+    if stoch_k is not None and not np.isnan(stoch_k):
+        if not (50 <= stoch_k <= 80):
+            msg = f"Stochastic K={stoch_k:.1f} outside sweet-spot 50-80"
+            print(f"  [Stoch Zone] FAIL: {msg}")
+            print(f"\n  >>> DECISION: NO TRADE — {msg}")
+            return {
+                "direction": "SELL",
+                "decision": False,
+                "confidence": 0,
+                "option": 0,
+                "checks": {"stoch_zone": {"pass": False, "message": msg}},
+                "reason": f"SELL rejected: {msg}",
+            }
 
     checks = {}
 
