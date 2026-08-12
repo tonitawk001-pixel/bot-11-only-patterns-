@@ -50,7 +50,7 @@ class Config:
     MACD_SLOW = int(os.getenv("MACD_SLOW", "26"))
     MACD_SIGNAL = int(os.getenv("MACD_SIGNAL", "9"))
     EMA_PERIODS = [int(x) for x in os.getenv("EMA_PERIODS", "20,50,200").split(",")]
-    SMA_PERIODS = [int(x) for x in os.getenv("SMA_PERIODS", "40,200").split(",")]
+    SMA_PERIODS = [int(x) for x in os.getenv("SMA_PERIODS", "50,200").split(",")]
     ATR_PERIOD = int(os.getenv("ATR_PERIOD", "14"))
     STOCH_K_PERIOD = int(os.getenv("STOCH_K_PERIOD", "14"))
     STOCH_D_PERIOD = int(os.getenv("STOCH_D_PERIOD", "3"))

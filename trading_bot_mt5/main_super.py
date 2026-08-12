@@ -565,6 +565,23 @@ def main_loop():
                         raw_direction = "NONE"
                         logger.info(f"[STOCH] Chop SELL blocked: K={m15_stoch_k:.0f} in 35-50")
 
+                # VOLATILITY FILTER: skip dead market (<0.1% ATR) and chop zone (0.3-0.5% ATR)
+                try:
+                    m15_atr_val = float(i15['atr'].iloc[-1]) if 'atr' in i15 else None
+                    if m15_atr_val is not None and m15_price > 0:
+                        m15_atr_pct = m15_atr_val / m15_price * 100
+                        if raw_direction != "NONE" and m15_atr_pct < 0.1:
+                            blocked_by = f"vol_dead_{m15_atr_pct:.2f}pct"
+                            raw_direction = "NONE"
+                            logger.info(f"[VOL] Dead market (ATR={m15_atr_pct:.2f}% < 0.1%) -- skip")
+                        elif raw_direction != "NONE" and 0.3 <= m15_atr_pct <= 0.5:
+                            blocked_by = f"vol_chop_{m15_atr_pct:.2f}pct"
+                            raw_direction = "NONE"
+                            logger.info(f"[VOL] Chop zone (ATR={m15_atr_pct:.2f}% in 0.3-0.5%) -- skip")
+                except Exception as e:
+                    pass  # volatility filter is non-critical
+
+
 
                 # ── CONFIRMATION ENGINE: Run if raw direction is BUY or SELL ──
                 engine_result = None
