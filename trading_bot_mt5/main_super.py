@@ -610,15 +610,15 @@ def main_loop():
                 except Exception as e:
                     pass
 
-                # SELL VOLUME FILTER: sell requires volume >= 0.8x (conviction). BUY unfiltered.
+                # SELL VOLUME FILTER: sell requires volume 1.2x-2.5x (conviction, not panic). BUY unfiltered.
                 try:
                     if raw_direction == "SELL" and m15_vol is not None and m15_vol_ma is not None:
                         if m15_vol_ma > 0:
                             m15_vol_ratio = m15_vol / m15_vol_ma
-                            if m15_vol_ratio < 0.8:
-                                blocked_by = f"sell_low_volume_{m15_vol_ratio:.2f}x"
+                            if m15_vol_ratio < 1.2 or m15_vol_ratio > 2.5:
+                                blocked_by = f"sell_vol_outside_{m15_vol_ratio:.2f}x"
                                 raw_direction = "NONE"
-                                logger.info(f"[VOL] SELL blocked: low volume {m15_vol_ratio:.2f}x < 0.8x (no conviction)")
+                                logger.info(f"[VOL] SELL blocked: volume {m15_vol_ratio:.2f}x outside 1.2-2.5x (no conviction or panic)")
                 except Exception as e:
                     pass
 
