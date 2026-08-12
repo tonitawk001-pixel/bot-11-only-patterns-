@@ -579,6 +579,23 @@ def main_loop():
                             raw_direction = "NONE"
                             logger.info(f"[VOL] Chop zone (ATR={m15_atr_pct:.2f}% in 0.3-0.5%) -- skip")
                 except Exception as e:
+                    pass
+
+
+                # BOLLINGER BAND FILTER: block SELL when price in middle of bands (0.3-0.7)
+                try:
+                    if raw_direction == "SELL" and m15_bb_upper is not None and m15_bb_lower is not None:
+                        bb_range = m15_bb_upper - m15_bb_lower
+                        if bb_range > 0:
+                            bb_pos = (m15_price - m15_bb_lower) / bb_range
+                            if 0.3 <= bb_pos <= 0.7:
+                                blocked_by = f"bb_middle_sell_{bb_pos:.2f}"
+                                raw_direction = "NONE"
+                                logger.info(f"[BB] SELL blocked: price in middle of bands (pos={bb_pos:.2f})")
+                except Exception as e:
+                    pass
+
+                except Exception as e:
                     pass  # volatility filter is non-critical
 
 
