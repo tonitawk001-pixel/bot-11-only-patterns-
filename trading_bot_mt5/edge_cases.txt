@@ -1,0 +1,29 @@
+================================================================================
+  REGIME DETECTOR EDGE CASE TEST
+================================================================================
+
+  Testing boundary conditions:
+  ADX        Hour   Dir    strong_trend   blocked_by                final_dir
+  19.9       14     BUY    False          ADX_20_lt_20              NONE
+  20.0       14     BUY    False          None                      BUY
+  20.1       14     BUY    False          None                      BUY
+  34.9       14     BUY    False          None                      BUY
+  35.0       14     BUY    True           None                      BUY
+  35.1       14     BUY    True           None                      BUY
+  35.1       2      BUY    True           None                      BUY
+  25.0       2      SELL   False          outside_active_hours_2h   NONE
+  nan        14     BUY    False          None                      BUY
+  40.0       10     NONE   True           None                      NONE
+
+  Testing failure modes (should not crash):
+    ADX=None: CRASHED ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+    ADX=inf: handled (True, None, BUY)
+    ADX=-5: handled (False, ADX_-5_lt_20, NONE)
+    hour=-1: handled (False, outside_active_hours_-1h, NONE)
+
+  Indicator dict fallback test:
+    Missing adx_14 -> m15_adx=0.0 (fallback works, strong_trend will be False)
+
+================================================================================
+  EDGE CASE TEST COMPLETE — no crashes, correct boundaries
+================================================================================

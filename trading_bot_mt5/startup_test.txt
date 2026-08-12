@@ -1,0 +1,42 @@
+================================================================================
+  STARTUP SEQUENCE TEST (replicates main_loop init, stops before trades)
+  2026-08-12 15:32 UTC
+================================================================================
+
+[1] Import MT5Connection...
+    OK: MT5Connection created
+
+[2] Initialize MT5...
+2026-08-12 18:32:39 | INFO     | TradingBot | Connecting to local MT5 terminal...
+2026-08-12 18:32:39 | INFO     | TradingBot | ✅ MT5 connected | Account: 314326 | Server: ACCMIntl-Demo | Balance: $420.32
+    OK: MT5 connected
+
+[3] Import strategy + filters...
+2026-08-12 18:32:39 | INFO     | TradingBot | GoldScalpingStrategy v4 initialized (XAUUSD only, 20 trades/day target).
+    OK: strategy + news filter created
+
+[4] Get account info...
+    OK: Account 314326 Balance $420.32
+
+[5] Get candles (H4/M15/M5/M1)...
+    H4: OK (50 bars)
+    M15: OK (100 bars)
+    M5: OK (100 bars)
+    M1: OK (100 bars)
+
+[6] Compute indicators on M15...
+2026-08-12 18:32:39 | WARNING  | TradingBot | EMA(200): Not enough data (100 < 200)
+    adx_14: OK
+    stochastic: OK
+    smas: OK
+
+[7] Verify confirmation engine loads...
+    OK: evaluate_trade_signals available
+
+[8] Verify regime detector inputs available...
+    ADX=20.7, strong_trend=False
+
+================================================================================
+  STARTUP SEQUENCE COMPLETE — bot can reach trade loop
+================================================================================
+2026-08-12 18:32:39 | INFO     | TradingBot | MT5 connection closed.

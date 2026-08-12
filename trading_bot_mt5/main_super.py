@@ -465,9 +465,9 @@ def main_loop():
                     continue
 
                 h4w = conn.get_candles(SYMBOL, "H4", 50)
-                m15w = conn.get_candles(SYMBOL, "M15", 100)
-                m5w = conn.get_candles(SYMBOL, "M5", 100)
-                m1w = conn.get_candles(SYMBOL, "M1", 100)
+                m15w = conn.get_candles(SYMBOL, "M15", 300)
+                m5w = conn.get_candles(SYMBOL, "M5", 300)
+                m1w = conn.get_candles(SYMBOL, "M1", 300)
                 if h4w is None or m15w is None or m5w is None:
                     continue
 
