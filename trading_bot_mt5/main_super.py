@@ -550,6 +550,21 @@ def main_loop():
                     blocked_by = f"outside_active_hours_{h}h"
                     raw_direction = "NONE"
                     logger.info(f"[SESSION] Outside active hours ({h}h UTC) -- skipping")
+                # ADAPTIVE STOCHASTIC: regime-conditioned zones (data-derived, +$27,538)
+                if raw_direction != "NONE" and m15_stoch_k is not None and not np.isnan(m15_stoch_k):
+                    if strong_trend and raw_direction == "SELL" and (20 <= m15_stoch_k <= 50):
+                        blocked_by = f"trend_sell_stoch_{m15_stoch_k:.0f}_20-50"
+                        raw_direction = "NONE"
+                        logger.info(f"[STOCH] Strong trend SELL blocked: K={m15_stoch_k:.0f} in 20-50")
+                    elif not strong_trend and raw_direction == "BUY" and m15_stoch_k < 35:
+                        blocked_by = f"chop_buy_stoch_{m15_stoch_k:.0f}_lt_35"
+                        raw_direction = "NONE"
+                        logger.info(f"[STOCH] Chop BUY blocked: K={m15_stoch_k:.0f} < 35")
+                    elif not strong_trend and raw_direction == "SELL" and (35 <= m15_stoch_k <= 50):
+                        blocked_by = f"chop_sell_stoch_{m15_stoch_k:.0f}_35-50"
+                        raw_direction = "NONE"
+                        logger.info(f"[STOCH] Chop SELL blocked: K={m15_stoch_k:.0f} in 35-50")
+
 
                 # ── CONFIRMATION ENGINE: Run if raw direction is BUY or SELL ──
                 engine_result = None
