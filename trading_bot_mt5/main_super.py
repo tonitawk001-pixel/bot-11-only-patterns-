@@ -581,7 +581,6 @@ def main_loop():
                 except Exception as e:
                     pass
 
-
                 # BOLLINGER BAND FILTER: block SELL when price in middle of bands (0.3-0.7)
                 try:
                     if raw_direction == "SELL" and m15_bb_upper is not None and m15_bb_lower is not None:
@@ -595,10 +594,21 @@ def main_loop():
                 except Exception as e:
                     pass
 
+                # DIRECTIONAL MOMENTUM: trade WITH momentum, never against (+DI/-DI)
+                try:
+                    if 'di_14' in i15 and raw_direction != "NONE":
+                        m15_pdi = float(i15['di_14']['pdi'].iloc[-1])
+                        m15_ndi = float(i15['di_14']['ndi'].iloc[-1])
+                        if raw_direction == "BUY" and m15_pdi <= m15_ndi:
+                            blocked_by = f"buy_against_momentum"
+                            raw_direction = "NONE"
+                            logger.info(f"[MOM] BUY blocked: +DI={m15_pdi:.0f} <= -DI={m15_ndi:.0f} (bearish momentum)")
+                        elif raw_direction == "SELL" and m15_pdi > m15_ndi:
+                            blocked_by = f"sell_against_momentum"
+                            raw_direction = "NONE"
+                            logger.info(f"[MOM] SELL blocked: +DI={m15_pdi:.0f} > -DI={m15_ndi:.0f} (bullish momentum)")
                 except Exception as e:
-                    pass  # volatility filter is non-critical
-
-
+                    pass
 
                 # ── CONFIRMATION ENGINE: Run if raw direction is BUY or SELL ──
                 engine_result = None

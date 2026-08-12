@@ -404,6 +404,40 @@ def compute_adx(
     return adx
 
 
+def compute_directional_index(
+    high: pd.Series,
+    low: pd.Series,
+    close: pd.Series,
+    period: int = 14,
+) -> pd.DataFrame:
+    """
+    Compute +DI and -DI (Directional Indicators).
+    +DI > -DI = bullish momentum, +DI < -DI = bearish momentum.
+    """
+    n = len(close)
+    if n < period * 2:
+        return pd.DataFrame({
+            "pdi": pd.Series([np.nan] * n, index=close.index),
+            "ndi": pd.Series([np.nan] * n, index=close.index),
+        })
+
+    tr = pd.concat([(high - low).abs(),
+                     (high - close.shift()).abs(),
+                     (low - close.shift()).abs()], axis=1).max(axis=1)
+
+    up_move = high.diff()
+    down_move = low.shift() - low
+
+    plus_dm = pd.Series(np.where((up_move > down_move) & (up_move > 0), up_move, 0.0), index=close.index)
+    minus_dm = pd.Series(np.where((down_move > up_move) & (down_move > 0), down_move, 0.0), index=close.index)
+
+    atr = tr.ewm(span=period, adjust=False).mean()
+    pdi = 100 * plus_dm.ewm(span=period, adjust=False).mean() / atr.replace(0, np.nan)
+    ndi = 100 * minus_dm.ewm(span=period, adjust=False).mean() / atr.replace(0, np.nan)
+
+    return pd.DataFrame({"pdi": pdi, "ndi": ndi}, index=close.index)
+
+
 # ------------------------------------------------------------------
 # Batch computation
 # ------------------------------------------------------------------
@@ -446,6 +480,7 @@ def compute_all_indicators(
     if "tick_volume" in ohlcv.columns:
         volume_ma = compute_volume_ma(ohlcv["tick_volume"], period=20)
     adx_14 = compute_adx(high, low, close, period=14)
+    di_14 = compute_directional_index(high, low, close, period=14)
 
     return {
         "rsi": rsi,
@@ -457,4 +492,5 @@ def compute_all_indicators(
         "stochastic": stochastic,
         "volume_ma": volume_ma,
         "adx_14": adx_14,
+        "di_14": di_14,
     }
