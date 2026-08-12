@@ -1,0 +1,89 @@
+================================================================================
+  TRAILING STOP ON ACTUAL TRADES
+  2026-08-12 16:42 UTC
+================================================================================
+Pulling M15 data...
+Got 11639 candles
+
+================================================================================
+  TOP TRAILING STOP CONFIGS
+================================================================================
+
+ #1: Trail=0.75xATR Activate=2.0xATR
+   Original: $+26.14 -> Trail: $+162.77 (Diff: $+136.63)
+   Improved: 9 | Worsened: 4 trades
+
+ #2: Trail=1.0xATR Activate=2.0xATR
+   Original: $+26.14 -> Trail: $+148.80 (Diff: $+122.66)
+   Improved: 9 | Worsened: 3 trades
+
+ #3: Trail=1.25xATR Activate=2.0xATR
+   Original: $+26.14 -> Trail: $+146.15 (Diff: $+120.01)
+   Improved: 8 | Worsened: 3 trades
+
+ #4: Trail=0.5xATR Activate=2.0xATR
+   Original: $+26.14 -> Trail: $+134.99 (Diff: $+108.85)
+   Improved: 9 | Worsened: 5 trades
+
+ #5: Trail=0.5xATR Activate=1.5xATR
+   Original: $+26.14 -> Trail: $+113.76 (Diff: $+87.62)
+   Improved: 11 | Worsened: 5 trades
+
+ #6: Trail=0.5xATR Activate=1.0xATR
+   Original: $+26.14 -> Trail: $+110.01 (Diff: $+83.87)
+   Improved: 12 | Worsened: 5 trades
+
+ #7: Trail=1.5xATR Activate=2.0xATR
+   Original: $+26.14 -> Trail: $+100.51 (Diff: $+74.37)
+   Improved: 8 | Worsened: 3 trades
+
+ #8: Trail=0.5xATR Activate=1.25xATR
+   Original: $+26.14 -> Trail: $+98.96 (Diff: $+72.82)
+   Improved: 11 | Worsened: 5 trades
+
+ #9: Trail=2.0xATR Activate=1.5xATR
+   Original: $+26.14 -> Trail: $+95.72 (Diff: $+69.58)
+   Improved: 7 | Worsened: 3 trades
+
+ #10: Trail=2.0xATR Activate=1.0xATR
+   Original: $+26.14 -> Trail: $+88.91 (Diff: $+62.77)
+   Improved: 7 | Worsened: 4 trades
+
+ #11: Trail=2.0xATR Activate=2.0xATR
+   Original: $+26.14 -> Trail: $+87.86 (Diff: $+61.72)
+   Improved: 6 | Worsened: 2 trades
+
+ #12: Trail=2.0xATR Activate=1.25xATR
+   Original: $+26.14 -> Trail: $+77.11 (Diff: $+50.97)
+   Improved: 6 | Worsened: 4 trades
+
+ #13: Trail=0.75xATR Activate=1.5xATR
+   Original: $+26.14 -> Trail: $+70.69 (Diff: $+44.55)
+   Improved: 11 | Worsened: 5 trades
+
+ #14: Trail=0.75xATR Activate=1.0xATR
+   Original: $+26.14 -> Trail: $+69.04 (Diff: $+42.90)
+   Improved: 12 | Worsened: 5 trades
+
+ #15: Trail=0.75xATR Activate=1.25xATR
+   Original: $+26.14 -> Trail: $+55.89 (Diff: $+29.75)
+   Improved: 11 | Worsened: 5 trades
+
+================================================================================
+  BEST RESULT
+================================================================================
+  Trail: 0.75x ATR | Activate: 2.0x ATR
+  Original PnL: $+26.14
+  Trail PnL:    $+162.77
+  Improvement:  $+136.63
+
+  >>> Short by $+137.23 to hit $300
+
+================================================================================
+  COMBINED: V2 Filter + Trailing Stop
+================================================================================
+Traceback (most recent call last):
+  File "C:\visual studio code\ai bot\bot-6--master\bot-6--master\trading_bot_mt5\trail_opt.py", line 192, in <module>
+    vma20=sma(pd.Series(vol) if 'tick_volume' in df.columns else pd.Series(np.ones(n2)), 20)
+                        ^^^
+NameError: name 'vol' is not defined
