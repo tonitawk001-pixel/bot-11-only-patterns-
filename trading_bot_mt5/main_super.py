@@ -622,6 +622,16 @@ def main_loop():
                 except Exception as e:
                     pass
 
+                # BUY MACD MOMENTUM: buy requires MACD histogram rising (momentum confirmation)
+                try:
+                    if raw_direction == "BUY" and m15_macd_hist is not None and m15_prev_macd_hist is not None:
+                        if m15_macd_hist <= m15_prev_macd_hist:
+                            blocked_by = "buy_macd_not_rising"
+                            raw_direction = "NONE"
+                            logger.info(f"[MACD] BUY blocked: histogram not rising ({m15_prev_macd_hist:.4f} -> {m15_macd_hist:.4f})")
+                except Exception as e:
+                    pass
+
                 # ── CONFIRMATION ENGINE: Run if raw direction is BUY or SELL ──
                 engine_result = None
                 if raw_direction in ("BUY", "SELL"):
