@@ -1,0 +1,7 @@
+  original (threshold 3, no trend) TOTAL      -18,202  (1972 trades)  [np.float64(917.79), np.float64(-9296.4), np.float64(-15614.54), np.float64(5791.33)]
+  + trend filter (SMA50)         TOTAL       -4,202  (561 trades)  [np.float64(-457.85), np.float64(-2253.02), np.float64(-3117.31), np.float64(1625.83)]
+  + trend + threshold 4          TOTAL       -1,300  (345 trades)  [np.float64(-1829.88), np.float64(-1409.98), np.float64(731.05), np.float64(1208.72)]
+  + trend + threshold 5          TOTAL         -210  (88 trades)  [np.float64(-804.02), np.float64(-399.26), np.float64(210.85), np.float64(782.51)]
+  trend only, threshold 6        TOTAL           +0  (0 trades)  [0, 0, 0, 0]
+
+Done. bot-10 filter bot = +$87,951 reference.
