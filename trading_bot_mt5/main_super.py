@@ -707,19 +707,19 @@ def main_loop():
                         price = tick.ask if direction == "BUY" else tick.bid
                         atr_val = i15["atr"].iloc[-1]
 
-                        # ── 1:2 RISK TO REWARD ──
+                        # ── 1:1 RISK TO REWARD ──
                         # SL = recent swing +/- ATR * 2.5 (for breathing room)
-                        # TP = SL distance * 2.0 (minimum 1:2 RR)
+                        # TP = SL distance * 1.0 (1:1 RR)
                         if direction == "BUY":
                             recent_swing_low = float(m15w_ren['low'].iloc[-20:].min())
                             sl = min(recent_swing_low - (atr_val * 0.5), price - (atr_val * 2.5))
                             sl_distance = price - sl
-                            tp = price + (sl_distance * 2.0)  # 1:2 RR
+                            tp = price + (sl_distance * 1.0)  # 1:1 RR
                         else:
                             recent_swing_high = float(m15w_ren['high'].iloc[-20:].max())
                             sl = max(recent_swing_high + (atr_val * 0.5), price + (atr_val * 2.5))
                             sl_distance = sl - price
-                            tp = price - (sl_distance * 2.0)  # 1:2 RR
+                            tp = price - (sl_distance * 1.0)  # 1:1 RR
 
                         # Minimum SL distance (at least 3.0 ATR for gold — sweep-optimized)
                         min_sl_dist = atr_val * 3.0
@@ -727,10 +727,10 @@ def main_loop():
                             sl_distance = min_sl_dist
                             if direction == "BUY":
                                 sl = price - sl_distance
-                                tp = price + (sl_distance * 2.0)
+                                tp = price + (sl_distance * 1.0)
                             else:
                                 sl = price + sl_distance
-                                tp = price - (sl_distance * 2.0)
+                                tp = price - (sl_distance * 1.0)
 
                         risk_pct = active_risk
                         conf = engine_result.get("confidence", 0) if engine_result else 0
