@@ -531,9 +531,9 @@ def main_loop():
 
                 # REGIME DETECTOR: aggressive strong trend, filtered chop (best +37974)
                 try:
-                    m15_adx = float(i15.get('adx_14', pd.Series([0])).iloc[-1]) if 'adx_14' in i15 else 99
+                    m15_adx = float(i15['adx_14'].iloc[-1]) if 'adx_14' in i15 else float('nan')
                 except:
-                    m15_adx = 99
+                    m15_adx = float('nan')
                 strong_trend = (not np.isnan(m15_adx)) and m15_adx >= 35
                 if strong_trend:
                     logger.info(f"[REGIME] Strong trend (ADX={m15_adx:.0f} >= 35) -- aggressive mode")
@@ -558,7 +558,7 @@ def main_loop():
                     logger.info(f"[SESSION] Outside active hours ({h}h UTC) -- skipping")
                 # STOCHASTIC FILTER REMOVED (no edge across backtests: best setting helps only 2/4 periods)
 
-                # VOLATILITY FILTER: direction-specific. BUY skips dead (<0.1%). SELL requires 0.2-0.5%.
+                # VOLATILITY FILTER: direction-specific. BUY skips dead (<0.1%). SELL blocked <0.3%.
                 try:
                     m15_atr_val = float(i15['atr'].iloc[-1]) if 'atr' in i15 else None
                     if m15_atr_val is not None and m15_price > 0:
@@ -574,7 +574,7 @@ def main_loop():
                 except Exception as e:
                     pass
 
-                # BOLLINGER BAND FILTER: block SELL when price in middle of bands (0.3-0.7)
+                # BOLLINGER BAND FILTER: block SELL when price in middle of bands (0.25-0.7)
                 try:
                     if raw_direction == "SELL" and m15_bb_upper is not None and m15_bb_lower is not None:
                         bb_range = m15_bb_upper - m15_bb_lower
@@ -587,7 +587,7 @@ def main_loop():
                 except Exception as e:
                     pass
 
-                # DIRECTIONAL MOMENTUM: trade WITH momentum, never against (+DI/-DI)
+                # DIRECTIONAL MOMENTUM (SELL-only): block SELL when +DI > -DI (bullish momentum)
                 try:
                     if 'di_14' in i15 and raw_direction != "NONE":
                         m15_pdi = float(i15['di_14']['pdi'].iloc[-1])
@@ -599,7 +599,7 @@ def main_loop():
                 except Exception as e:
                     pass
 
-                # SELL VOLUME FILTER: sell requires volume 1.2x-2.5x (conviction, not panic). BUY unfiltered.
+                # SELL VOLUME FILTER: block SELL when volume <0.8x (too quiet). BUY unfiltered.
                 try:
                     if raw_direction == "SELL" and m15_vol is not None and m15_vol_ma is not None:
                         if m15_vol_ma > 0:
